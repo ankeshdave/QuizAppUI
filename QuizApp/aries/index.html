@@ -29,13 +29,16 @@
     <script type='text/javascript' src='js/plugins/jflot/jquery.flot.js'></script>    
     <script type='text/javascript' src='js/plugins/jflot/jquery.flot.stack.js'></script>    
     <script type='text/javascript' src='js/plugins/jflot/jquery.flot.pie.js'></script>
-<!--     <script type='text/javascript' src='js/plugins/jflot/jquery.flot.resize.js'></script> -->
+    <script type='text/javascript' src='js/plugins/jflot/jquery.flot.resize.js'></script>
     
+    <script type='text/javascript' src='js/plugins/epiechart/jquery.easy-pie-chart.js'></script>    
     <script type='text/javascript' src='js/plugins/sparklines/jquery.sparkline.min.js'></script>        
     
     <script type='text/javascript' src='js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js'></script>
     
     <script type='text/javascript' src="js/plugins/uniform/jquery.uniform.min.js"></script>
+    
+    <script type='text/javascript' src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
     
     <script type='text/javascript' src='js/plugins/shbrush/XRegExp.js'></script>
     <script type='text/javascript' src='js/plugins/shbrush/shCore.js'></script>
@@ -46,7 +49,7 @@
     <script type='text/javascript' src='js/plugins.js'></script>
     <script type='text/javascript' src='js/charts.js'></script>
     
-	<script type='text/javascript' src='js/actions.js'></script>
+    <script type='text/javascript' src='js/actions.js'></script>
 </head>
 <body>    
     <div id="loader"><img src="Content/img/loader.gif"/></div>
@@ -55,7 +58,7 @@
         <div class="sidebar">
             
             <div class="top">
-                <a href="index-2.html" class="logo"></a>
+                <a href="index.html" class="logo"></a>
                 <div class="search">
                     <div class="input-prepend">
                         <span class="add-on orange"><span class="icon-search icon-white"></span></span>
@@ -63,9 +66,9 @@
                     </div>            
                 </div>
             </div>
-            <div class="nContainer">                
+            <div class="nContainer">
                 <ul class="navigation">         
-                    <li class="active"><a href="index-2.html" class="blblue">Dashboard</a></li>
+                    <li class="active"><a href="index.html" class="blblue">Dashboard</a></li>
                     <li>
                         <a href="#" class="blyellow">UI Elements</a>
                         <div class="open"></div>
@@ -102,6 +105,8 @@
                         <div class="open"></div>
                         <ul>
                             <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="invoice.html">Invoice</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
                             <li><a href="login.html">Login</a></li>
                         </ul>                    
                     </li>
@@ -130,7 +135,7 @@
             
             <ul class="navigation">
                 <li>
-                    <a href="index-2.html" class="button">
+                    <a href="index.html" class="button">
                         <div class="icon">
                             <span class="ico-monitor"></span>
                         </div>                    
@@ -160,14 +165,14 @@
                             <span class="ico-pen-2"></span>
                         </div>                    
                         <div class="name">Forms Stuff</div>
-                    </a>                
-                    <ul class="sub">
-                        <li><a href="forms.html">Elements</a></li>
-                        <li><a href="validation.html">Validation</a></li>
-                        <li><a href="grid.html">Grid</a></li>
-                        <li><a href="editor.html">Editors</a></li>
-                        <li><a href="wizard.html">Wizard</a></li>
-                    </ul>                    
+                    </a>
+					<ul class="sub">
+						<li><a href="forms.html">Elements</a></li>
+						<li><a href="validation.html">Validation</a></li>
+						<li><a href="grid.html">Grid</a></li>
+						<li><a href="editor.html">Editors</a></li>
+						<li><a href="wizard.html">Wizard</a></li>
+					</ul>
                 </li>                        
                 <li>
                     <a href="statistic.html" class="button red">
@@ -184,11 +189,11 @@
                             <span class="ico-layout-7"></span>
                         </div>                    
                         <div class="name">Tables</div>
-                    </a> 
-                    <ul class="sub">
-                        <li><a href="tables.html">Simple</a></li>
-                        <li><a href="tables_dynamic.html">Dynamic</a></li>
-                    </ul>                                        
+                    </a>
+					<ul class="sub">
+						<li><a href="tables.html">Simple</a></li>
+						<li><a href="tables_dynamic.html">Dynamic</a></li>
+					</ul> 
                 </li>
                 <li>
                     <a href="#" class="button purple">
@@ -197,11 +202,13 @@
                             <span class="ico-box"></span>
                         </div>                    
                         <div class="name">Samples</div>
-                    </a>                
-                    <ul class="sub">
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="login.html">Login</a></li>
-                    </ul>                                        
+                    </a>
+					<ul class="sub">
+						<li><a href="faq.html">FAQ</a></li>
+						<li><a href="invoice.html">Invoice</a></li>
+						<li><a href="mailbox.html">Mailbox</a></li>
+						<li><a href="login.html">Login</a></li>
+					</ul>
                 </li>
                 <li>
                     <a href="#" class="button orange">
@@ -240,11 +247,39 @@
                                     </div>                                    
                                     <div class="row-form">
                                         <div class="span4">Navigation:</div>
-                                        <div class="span8"><input type="radio" class="cNav" name="cNavButton" value="default"/> Default <input type="radio" class="cNav" name="cNavButton" value="bordered"/> Bordered</div>
-                                    </div>                                    
+                                        <div class="span8">
+											<label><input type="radio" class="cNav" name="cNavButton" value="default"/> Default</label>
+											<label><input type="radio" class="cNav" name="cNavButton" value="bordered"/> Bordered</label>
+										</div>
+                                    </div>
+                                    <div class="row-form">
+                                        <div class="span4">Nav color:</div>
+                                        <div class="span8">
+											<div class="cNavC">
+												<span class="color_1" name="cNavButColor"></span>
+												<span class="color_2" name="cNavButColor"></span>
+												<span class="color_3" name="cNavButColor"></span>
+												<span class="color_4" name="cNavButColor"></span>
+												<span class="color_5" name="cNavButColor"></span>
+												<span class="color_6" name="cNavButColor"></span>
+												<span class="color_7" name="cNavButColor"></span>
+												<span class="color_8" name="cNavButColor"></span>
+											</div>
+										</div>
+                                    </div>
+									<div class="row-form">
+                                        <div class="span4">Top navigation:</div>
+                                        <div class="span8">
+											<label><input type="radio" class="cTopNavH" name="cTopNavHide" value="show"/> Show</label>
+											<label><input type="radio" class="cTopNavH" name="cTopNavHide" value="hide"/> Hide</label>
+										</div>
+                                    </div> 
                                     <div class="row-form">
                                         <div class="span4">Content:</div>
-                                        <div class="span8"><input type="radio" class="cCont" name="cContent" value=""/> Responsive <input type="radio" class="cCont" name="cContent" value="fixed"/> Fixed</div>
+                                        <div class="span8">
+											<label><input type="radio" class="cCont" name="cContent" value=""/> Responsive</label>
+											<label><input type="radio" class="cCont" name="cContent" value="fixed"/> Fixed</label>
+										</div>
                                     </div>                                    
                                 </div>
                             </div>
@@ -257,72 +292,18 @@
             <div class="content">
                 
                 <div class="page-header">
-                    <div class="icon">
-                        <span class="ico-arrow-right"></span>
-                    </div>
-                    <h1>Dashboard <small>METRO STYLE ADMIN PANEL</small></h1>
+					<div class="wrap-title">
+						<div class="icon">
+							<span class="ico-arrow-right"></span>
+						</div>
+						<h1>Dashboard <small>METRO STYLE ADMIN PANEL</small></h1>
+					</div>
+					<ul class="breadcrumb">
+						<li class="active">Home</li>
+					</ul>
+					<div class="clear"></div>
                 </div>
-                
-                <div class="row-fluid">
-                    <div class="span12">
-                        <div class="widgets">
-                            <div class="widget blue value">
-                                <div class="left">60%</div>
-                                <div class="right">
-                                    $1,530 amount paid<br/>
-                                    $2,102 in queue<br/>
-                                    $11,100 total taxes
-                                </div>
-                                <div class="bottom">
-                                    <a href="#">Invoices statistics</a>
-                                </div>
-                            </div>
-                            <div class="widget green icon">
-                                <div class="left">
-                                    <div class="icon">
-                                        <span class="ico-download"></span>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <table cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td>HDD</td><td>4.5 / 250 GB</td>
-                                        </tr>
-                                        <tr>
-                                            <td>MySQL</td><td>1.8 / 10 GB</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Databases</td><td>1 / 5</td> 
-                                        </tr>
-                                        <tr>
-                                            <td>E-mails</td><td>5 / 15</td> 
-                                        </tr>
-                                        <tr>
-                                            <td>Tickets</td><td>2</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="bottom">
-                                    <a href="#">Server information</a>
-                                </div>                            
-                            </div>
-                            <div class="widget orange chart nmr">
-                                <div class="left">                                    
-                                    <span class="mChartBar" sparkWidth="90" sparkHeight="90" sparkType="bar" sparkBarColor="#FFFFFF" sparkBarWidth="10">10,9,8.5,8,9,8,7,7.5</span>
-                                </div>
-                                <div class="right">
-                                    65% New<br/>
-                                    35% Returning<br/>
-                                    00:05:12 Average time on site
-                                </div>
-                                <div class="bottom">
-                                    <a href="#">List visits</a>
-                                </div>                            
-                            </div>                        
-                        </div>
-                    </div>
-                </div>
-                
+
                 <div class="row-fluid">
                     
                     <div class="span7">
