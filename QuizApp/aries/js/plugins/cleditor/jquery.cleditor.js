@@ -782,7 +782,7 @@
 
   // imagesPath - returns the path to the images folder
   function imagesPath() {
-    var cssFile = "jquery.cleditor.css",
+    var cssFile = "jquery.cleditor.html",
         href = $("link[href$='" + cssFile +"']").attr("href");
     return href.substr(0, href.length - cssFile.length) + "images/";
   }

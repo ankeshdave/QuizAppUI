@@ -14,7 +14,8 @@
 @import "cleditor/cleditor.css";
 @import "shbrush/shCoreDefault.css";
 @import "shbrush/shThemeDefault.css";
-@import "../../js/plugins/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css";
+@import "../js/plugins/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css";
+@import "fullcalendar/fullcalendar.css";
 @import "icons.css";
 @import "styling.css";
 @import "stylesheet.css";
@@ -84,16 +85,20 @@ body { min-height: 100%; font-family: "Segoe UI", arial, sans-serif; font-size: 
     .wrapper{margin: 0px 10px;}
     .body{margin-left: 0px; padding-left: 0px; margin-top: 0px; z-index: 10;}
     
-    .sidebar{left: 0px; top: 10px; width: 100%; z-index: 20; display: none; background: url('../img/wpoint8.png') left top repeat;}
+    .sidebar{left: 0px; top: 10px; width: 100%; z-index: 20; display: none; background: url('../img/wpoint8.png') left top repeat; padding: 0px;}
     .sidebar .close{display: block;}
         .sidebar .top, .sidebar .widget{display: none;}        
         .sidebar .navigation{float: left; width: 100%;}
-            .sidebar .navigation li{padding: 3px 10px; width: 100%; }
+            .sidebar .navigation li{padding: 3px 10px; display: block; clear: both;}
+            
             .sidebar .navigation > li > a, .sidebar .navigation li ul,
             .sidebar .navigation li ul li,.sidebar .navigation li ul li a{width: 100%;}
                 .sidebar .navigation li ul{display: none;}
                     .sidebar .navigation li.active ul{display: block; float: left;}
                 .sidebar .navigation li ul li{clear: both;}
+          .sidebar .navigation > li > a,.sidebar .navigation li ul > li a{color: #333;}
+          .sidebar .navigation > li > a.active, .sidebar .navigation > li > a:hover,
+          .sidebar .navigation li ul > li a.active, .sidebar .navigation li ul > li a:hover{color: #000;}
           
     .body .navigation{height: auto;}
     .body .navigation .buttons .sbutton.navButton{display: inline-block;}

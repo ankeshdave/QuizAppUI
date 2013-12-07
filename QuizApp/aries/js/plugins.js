@@ -141,7 +141,7 @@ $(document).ready(function(){
                 
                 
                 if((index-2) == 0){
-                    $.post('php/ajax_wizard.php',{login: $("#wizard_ajax input[name=login]").val(),
+                    $.post('php/ajax_wizard.html',{login: $("#wizard_ajax input[name=login]").val(),
                                                 email: $("#wizard_ajax input[name=email]").val()},
                                                 function(data){
                                                         if(data == 'success')
@@ -153,7 +153,7 @@ $(document).ready(function(){
                 }                                                
                                 
                 if((index-2) == 1){
-                    $.post('php/ajax_wizard.php',{hash: $("#wizard_ajax input[name=hash]").val()},
+                    $.post('php/ajax_wizard.html',{hash: $("#wizard_ajax input[name=hash]").val()},
                                                   function(data){
                                                     if(data == 'success')
                                                         $('#wizard_ajax').stepy('step', index);
@@ -449,6 +449,54 @@ $(document).ready(function(){
             return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
         };        
    // 
+   
+   if($('#main_calendar').length > 0){
+        // fullcalendar
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        var calendar = $('#main_calendar').fullCalendar({
+                header: {		
+                        left: 'prev,next',
+                        center: 'title',
+                        right: '',
+                        right: 'month,agendaWeek,agendaDay'
+                },   
+                selectable: true,
+                selectHelper: true,
+                select: function(start, end) {
+
+                        $('#fcAddEvent').modal('show');
+
+                        $("#fcAddEventButton").click(function(){
+
+                            var title = $("#fcAddEventTitle").val();
+
+                            if(title){
+                                calendar.fullCalendar('renderEvent',
+                                            {
+                                                    title: title,
+                                                    start: start,
+                                                    end: end
+                                            },true
+                                    );
+                                    notify('Fullcalendar','New Event: '+title+';<br/>start: '+start+';<br/>end: '+end+';');
+                            }
+
+                            $('#fcAddEvent').modal('hide'); 
+                            $("#fcAddEventTitle").val('');
+                            calendar.fullCalendar('unselect');
+                        });                    
+                },
+                editable: true,
+                events: {
+                    url: "php/ajax_fullcalendar.php"
+                }            
+        });   
+    }
+   
 });
 
 $(window).load(function(){
