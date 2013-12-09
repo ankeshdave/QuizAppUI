@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> 
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
@@ -45,38 +46,55 @@
         <script type='text/javascript' src='~/js/actions.js'></script>
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
+        <div id="loader"><img src="~/Content/img/loader.gif" alt="Ajax Loader"/></div>
+        <div class="wrapper">
+            <div class="sidebar">
+                
+            </div>
+            <div class="body">
+                <ul class="navigation">
+                    <li>
+                        <a href="@Url.Action("Index","Home")" class="button">
+                            <div class="icon">
+                                <span class="ico-monitor"></span>
+                            </div> 
+                            <div class="name">Home</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("About", "Home")" class="button yellow">
+                            <div class="icon">
+                                <span class="ico-monitor"></span>
+                            </div> 
+                            <div class="name">About</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Contact", "Home")" class="button green">
+                            <div class="icon">
+                                <span class="ico-monitor"></span>
+                            </div> 
+                            <div class="name">Contact</div>
+                        </a>
+                    </li>
+                    @Html.Partial("_LoginPartial")
+                </ul>
+                <div class="content">
                     <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
+                     @RenderSection("featured", required: false)
+                     @RenderBody()
                 </div>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
         </div>
-        <footer>
+
+
+@*        <footer>
             <div class="content-wrapper">
                 <div class="float-left">
                     <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
                 </div>
             </div>
-        </footer>
+        </footer>*@
 
         @*@Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)*@
