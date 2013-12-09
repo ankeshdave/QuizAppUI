@@ -546,6 +546,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_LayoutPageWithSideBar.cshtml" />
+    <Content Include="Views\Shared\_PageHeaderPartial.cshtml" />
+    <Content Include="Views\Shared\_BreadCrumPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

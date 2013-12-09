@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="sidebar">
+
+</div>
+<div class="body">
+    @* Navigation Start  *@
+    <ul class="navigation">
+        <li>
+            <a href="@Url.Action("Index", "Home")" class="button">
+                <div class="icon">
+                    <span class="ico-monitor"></span>
+                </div>
+                <div class="name">Home</div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("About", "Home")" class="button yellow">
+                <div class="icon">
+                    <span class="ico-monitor"></span>
+                </div>
+                <div class="name">About</div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Contact", "Home")" class="button green">
+                <div class="icon">
+                    <span class="ico-monitor"></span>
+                </div>
+                <div class="name">Contact</div>
+            </a>
+        </li>
+        @Html.Partial("_LoginPartial")
+    </ul>
+    @* Navigation End  *@
+
+    @* Content Start  *@
+    <div class="content">
+        @* Page Header Start  *@
+        <div class="page-header">
+            
+            @Html.Partial("_PageHeaderPartial")
+
+            @* Breadcrumbs Start *@
+
+            @Html.Partial("_BreadCrumPartial")
+
+            @* Breadcrumbs End *@
+        </div>
+        @* Page Header End  *@
+
+
+        <div class="clear"></div>
+
+        @RenderSection("featured", required: false)
+        @RenderBody()
+    </div>
+    @* Content End  *@
+
+
+</div>

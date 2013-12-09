@@ -1,12 +1,24 @@
-﻿<li>
+﻿@if (Request.IsAuthenticated)
+{
+    <li>
+        <a href="@Url.Action("Index", "Home", new { area = "Admin" }, null)" class="button blue">
+            <div class="icon">
+                <span class="ico-monitor"></span>
+            </div>
+            <div class="name">Admin Area</div>
+        </a>
+    </li>
+}
+<li>
     @if (Request.IsAuthenticated)
     {
         <div class="user">
             <img src="~/Content/img/examples/users/dmitry_m.jpg" align="left" alt="User Image"/>
             <a href="@Url.Action("Manage", "Account", new { area = "" })" class="name">
-                <span>User.Identity.Name[User Name]</span>
-                <span class="sm">[User Role]</span>
+                <span>@User.Identity.Name</span>
+                <span class="sm">Role</span>
             </a>
+            <br/>
             @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
             {
                 @Html.AntiForgeryToken()
@@ -38,14 +50,14 @@
                             <div class="span4">Nav color:</div>
                             <div class="span8">
                                 <div class="cNavC">
-                                    <span class="color_1" name="cNavButColor"></span>
-                                    <span class="color_2" name="cNavButColor"></span>
-                                    <span class="color_3" name="cNavButColor"></span>
-                                    <span class="color_4" name="cNavButColor"></span>
-                                    <span class="color_5" name="cNavButColor"></span>
-                                    <span class="color_6" name="cNavButColor"></span>
-                                    <span class="color_7" name="cNavButColor"></span>
-                                    <span class="color_8" name="cNavButColor"></span>
+                                    <span class="color_1" id="cNavButColor"></span>
+                                    <span class="color_2" id="cNavButColor"></span>
+                                    <span class="color_3" id="cNavButColor"></span>
+                                    <span class="color_4" id="cNavButColor"></span>
+                                    <span class="color_5" id="cNavButColor"></span>
+                                    <span class="color_6" id="cNavButColor"></span>
+                                    <span class="color_7" id="cNavButColor"></span>
+                                    <span class="color_8" id="cNavButColor"></span>
                                 </div>
                             </div>
                         </div>
@@ -82,14 +94,3 @@
         </div>
     }
 </li>
-@if (Request.IsAuthenticated)
-{
-    <li>
-        <a href="@Url.Action("Index", "Home", new { area = "Admin" }, null)" class="button blue">
-            <div class="icon">
-                <span class="ico-monitor"></span>
-            </div> 
-            <div class="name">Admin Area</div>
-        </a>
-    </li>
-}
