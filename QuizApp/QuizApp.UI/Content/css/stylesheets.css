@@ -14,7 +14,7 @@
 @import "cleditor/cleditor.css";
 @import "shbrush/shCoreDefault.css";
 @import "shbrush/shThemeDefault.css";
-@import "../js/plugins/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css";
+@import "../../js/plugins/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css";
 @import "fullcalendar/fullcalendar.css";
 @import "icons.css";
 @import "styling.css";

@@ -4,13 +4,94 @@
     ViewBag.Title = "Log in";
 }
 
-<hgroup class="title">
+
+<div class="login">
+    <div class="page-header">
+        @Html.Partial("_PageHeaderPartial")
+    </div>
+    <div class="row-fluid">
+        @using (Html.BeginForm(new  { ReturnUrl = ViewBag.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <div class="row-form">
+                <div class="span12">
+                    @Html.TextBoxFor(m => m.UserName, new { name = "login", placeholder = "login" })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+            </div>
+            <div class="row-form">
+                <div class="span12">
+                    @Html.PasswordFor(m => m.Password, new { name = "password", placeholder = "password" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>            
+            </div>
+            <div class="row-form">
+                <div class="span12">
+                    @Html.CheckBoxFor(m => m.RememberMe) Keep me signed in
+                </div>
+            </div>
+            <div class="row-form">
+                <div class="span12">
+                    <button class="btn" type="submit">Sign in <span class="icon-arrow-next icon-white"></span></button>
+                </div>                
+            </div>
+        }
+
+        <form action="@Url.Action("Register","Account",new { area=""})">
+            <button class="btn" type="submit">Register <span class="icon-arrow-next icon-white"></span></button>
+        </form>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widgets">                                            
+                <div class="widget green icon">
+                    <div class="left">
+                        <div class="icon">
+                            <span class="ico-lamp-3"></span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td>1 table row</td><td>text</td>
+                            </tr>
+                            <tr>
+                                <td>2 table row</td><td>13,42</td>
+                            </tr>
+                            <tr>
+                                <td>3 table row</td><td>1 / 5</td> 
+                            </tr>
+                            <tr>
+                                <td>4 table row</td><td>15 rounds</td> 
+                            </tr>
+                            <tr>
+                                <td>5 table row</td><td>yeah</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="bottom">
+                        <a href="#">Some link for widget</a>
+                    </div>                            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@*<hgroup class="title">
     <h1>@ViewBag.Title.</h1>
 </hgroup>
 
 <section id="loginForm">
 <h2>Use a local account to log in.</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -38,12 +119,12 @@
         @Html.ActionLink("Register", "Register") if you don't have an account.
     </p>
 }
-</section>
+</section>*@
 
-<section class="social" id="socialLoginForm">
+@*<section class="social" id="socialLoginForm">
     <h2>Use another service to log in.</h2>
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
+</section>*@
 
 @*@section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
