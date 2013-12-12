@@ -725,8 +725,8 @@ div.tagsinput div input{line-height: 20px; height: 20px; font-size: 11px; margin
     .head ul.buttons > li.active > .dropdown-menu li a{color: #333 !important;}
         .head ul.buttons > li.active > .dropdown-menu li a:hover{color: #FFF !important;}
 
-.login{width: 300px; position: relative; left: 30%; margin-top: 150px;}
-    .login .row-form{padding: 5px 0px; width: 300px;}
+.login{ position: relative; margin-left:15%;  margin-right:20%;}
+    .login .row-form{padding: 5px 0px; width: 90%;}
     
 .icon-arrow-back{background: url('../img/back_dark.png') left top no-repeat !important;}
     .icon-arrow-back.icon-white{background: url('../img/back.png') left top no-repeat !important;}
