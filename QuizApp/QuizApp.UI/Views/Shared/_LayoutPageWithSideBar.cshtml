@@ -2,9 +2,36 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@* Page Header Start  *@
+    @Html.Partial("_PageHeaderWithBreadCrumsPartial")
+@* Page Header End  *@
+
+<div class="clear"></div>
+
+@RenderSection("featured", required: false)
+@RenderBody()
+
+
+
+
+@* Section Defination Start *@
+@section Sidebar
+{
     <div class="sidebar">
+        @if (IsSectionDefined("SidebarContent"))
+        {
+            @RenderSection("SidebarContent", required: false)
+        }
+        else
+        {
+            @Html.Partial("_SidebarDefaultPartial")
+        }
     </div>
-<div class="body">
+}
+
+@section PrimaryNavigation
+{
     @* Navigation Start  *@
     <ul class="navigation">
         <li>
@@ -34,29 +61,6 @@
         @Html.Partial("_LoginPartial")
     </ul>
     @* Navigation End  *@
+}
 
-    @* Content Start  *@
-    <div class="content">
-        @* Page Header Start  *@
-        <div class="page-header">
-            
-            @Html.Partial("_PageHeaderPartial")
-
-            @* Breadcrumbs Start *@
-
-            @Html.Partial("_BreadCrumPartial")
-
-            @* Breadcrumbs End *@
-        </div>
-        @* Page Header End  *@
-
-
-        <div class="clear"></div>
-
-        @RenderSection("featured", required: false)
-        @RenderBody()
-    </div>
-    @* Content End  *@
-
-
-</div>
+@* Section Defination End *@

@@ -224,6 +224,7 @@
     <Content Include="Content\css\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
     <Content Include="Content\css\cleditor\cleditor.css" />
+    <Content Include="Content\css\demo.html" />
     <Content Include="Content\css\epiechart\jquery.easy-pie-chart.css" />
     <Content Include="Content\css\fancybox\blank.gif" />
     <Content Include="Content\css\fancybox\fancybox_loading.gif" />
@@ -233,6 +234,10 @@
     <Content Include="Content\css\fonts\icomoon.svg" />
     <Content Include="Content\css\fullcalendar\fullcalendar.css" />
     <Content Include="Content\css\icons.css" />
+    <Content Include="Content\css\iconSocial.css" />
+    <Content Include="Content\css\IconSocial\demo-files\demo.css" />
+    <Content Include="Content\css\IconSocial\demo-files\demo.js" />
+    <Content Include="Content\css\IconSocial\Read Me.txt" />
     <Content Include="Content\css\ie.css" />
     <Content Include="Content\css\jquery\images\close.jpg" />
     <Content Include="Content\css\jquery\images\dateArrows.png" />
@@ -487,6 +492,11 @@
     <Content Include="Content\img\loaders\Descr.WD3" />
     <Content Include="Content\img\select\Descr.WD3" />
     <Content Include="Content\img\uniform\Descr.WD3" />
+    <None Include="Content\css\IconSocial\fonts\icomoon.eot" />
+    <None Include="Content\css\IconSocial\fonts\icomoon.svg" />
+    <None Include="Content\css\IconSocial\fonts\icomoon.ttf" />
+    <None Include="Content\css\IconSocial\fonts\icomoon.woff" />
+    <None Include="Content\css\IconSocial\selection.json" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
@@ -549,6 +559,8 @@
     <Content Include="Views\Shared\_LayoutPageWithSideBar.cshtml" />
     <Content Include="Views\Shared\_PageHeaderPartial.cshtml" />
     <Content Include="Views\Shared\_BreadCrumPartial.cshtml" />
+    <Content Include="Views\Shared\_SidebarDefaultPartial.cshtml" />
+    <Content Include="Views\Shared\_PageHeaderWithBreadCrumsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

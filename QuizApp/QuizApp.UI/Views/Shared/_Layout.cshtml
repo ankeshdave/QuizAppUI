@@ -48,12 +48,29 @@
     <body>
         <div id="loader"><img src="~/Content/img/loader.gif" alt="Ajax Loader"/></div>
         <div class="wrapper">
-            @RenderBody()
+             @if (IsSectionDefined("Sidebar"))
+             {
+                 @RenderSection("Sidebar", required: false)
+             }
+            <div class="body">
+                @if (IsSectionDefined("PrimaryNavigation"))
+                {
+                    @RenderSection("PrimaryNavigation", required: false)
+                }
+
+                <div class="content">
+                     @RenderBody()
+                </div>
+            </div>
+           
         </div>
 
             
         
-
+        @if (IsSectionDefined("ModalDivAndExtras"))
+        {
+            @RenderSection("ModalDivAndExtras",required: false)
+        }
 
 @*        <footer>
             <div class="content-wrapper">
