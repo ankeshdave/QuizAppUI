@@ -304,6 +304,7 @@ namespace QuizApp.UI.Controllers
         public ActionResult ExternalLoginsList(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+            
             return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
         }
 

@@ -214,6 +214,8 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModel\ExternalLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-QuizApp.UI-20131203185646.mdf" />
