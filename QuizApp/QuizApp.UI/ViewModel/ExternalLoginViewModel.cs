@@ -21,9 +21,12 @@ namespace QuizApp.UI.ViewModel
 {
     public class ExternalLoginViewModel
     {
-        public string ContainerCssClass { get; set; }
+        public string AnchorCssClass { get; set; }
 
-        public string ContainerCssStyle { get; set; }
+        public string AnchorCssStyle { get; set; }
+
+        public string DivCssClass { get; set; }
+        public string DivCssStyle { get; set; }
 
         public string IconCssClass { get; set; }
 

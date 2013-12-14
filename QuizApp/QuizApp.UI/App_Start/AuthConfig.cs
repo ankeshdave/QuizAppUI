@@ -26,7 +26,9 @@ namespace QuizApp.UI
             //    appId: "",
             //    appSecret: "");
 
-            OAuthWebSecurity.RegisterGoogleClient();
+            OAuthWebSecurity.RegisterGoogleClient("Google");
+
+            OAuthWebSecurity.RegisterYahooClient("Yahoo");
         }
     }
 }

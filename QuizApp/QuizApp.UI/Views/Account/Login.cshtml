@@ -1,4 +1,5 @@
-﻿@model QuizApp.UI.Models.LoginModel
+﻿@using QuizApp.UI.ViewModel
+@model QuizApp.UI.Models.LoginModel
 
 @{
     ViewBag.Title = "Log in";
@@ -63,105 +64,55 @@
                 </div>
             </div>
             <div class="span6">
-                <div class="block">
-                    <div class="head">
-                        <h2>
-                            Registered Users</h2>
-                        <ul class="buttons">
-                            <li><a href="#" onclick=" source('form_default'); return false; ">
-                                    <div class="icon">
-                                        <span class="ico-info"></span>
-                                    </div>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="widgets">
-                    <a href="#" class="swidget blue clean" style="background: #3b5999 !important; height: 100px; width: 100px">
-                        <div class="value" style="font-size: 72px;">
-                            <span aria-hidden="true" class="iconSocial-facebook"></span>
-                            <!--<img src="Content/img/loader.gif" alt="loader" />-->
-                        </div>
-                    </a>
-                    <a href="#" class="swidget blue" style="background: #e04d38	 !important; height: 100px; width: 100px">
-                        <div class="value" style="font-size: 72px;">
-                            <span class="iconSocial-google"></span>
-                        </div>
-                        <!--  <div class="bottom">
-                                  <div class="text">
-                                      Google</div>
-                              </div> -->
-                    </a>
-                                    
-                    <a href="#" class="swidget orange" style="background: #00acee !important; height: 100px; width: 100px">
-                        <div class="value" style="font-size: 72px;">
-                            <span class="iconSocial-twitter"></span>
-                        </div>
-                        <!-- <div class="bottom">
-                                 <div class="text">
-                                     Info</div>
-                                 <div class="value">
-                                     2,312</div>
-                             </div> -->
-                    </a>
-                    <a href="#" class="swidget orange" style="background: #00A600 !important; height: 100px; width: 100px">
-                        <div class="value" style="font-size: 72px;">
-                            <span class="iconSocial-windows8"></span>
-                        </div>
-                        <!-- <div class="bottom">
-                                 <div class="text">
-                                     Info</div>
-                                 <div class="value">
-                                     2,312</div>
-                             </div> -->
-                    </a>
-                </div>
+                @Html.Partial("_ExternalLoginsListPartial", (ExternalLoginListViewModel)ViewBag.ExternalLoginList)
             </div>
         </div>
     </div>
 </div>
-
-@*<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
-
-<section id="loginForm">
-<h2>Use a local account to log in.</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+@section ModalDivAndExtras
 {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Log in Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="Log in" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
-    </p>
+    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable sourcePosition"
+         tabindex="-1" role="dialog" style="position: fixed; height: auto; width: 1623px;
+                                                                                              top: 214.5px; left: 20px; display: none;" aria-describedby="source" aria-labelledby="ui-id-1">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+            <span id="ui-id-1" class="ui-dialog-title">Source</span>
+            <button class="ui-dialog-titlebar-close"></button>
+        </div>
+        <div class="dialog ui-dialog-content ui-widget-content" id="source" style="width: auto;
+                                                                                         min-height: 89px; max-height: none; height: auto;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"
+             style="z-index: 90;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;">
+        </div>
+        <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;">
+        </div>
+    </div>
 }
-</section>*@
 
-@*<section class="social" id="socialLoginForm">
-    <h2>Use another service to log in.</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>*@
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(document).on("click", ".swidget", function (e) {
+                e.preventDefault();
+                var form = $(this).closest("form");
+                form.submit();
+            });
+        });
+    </script>
+}
 
 @*@section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -29,10 +29,12 @@ namespace QuizApp.UI.ViewModel
             foreach (AuthenticationClientData authenticationClientData in authenticationClientCollection)
             {
                 var externalLogin = new ExternalLoginViewModel();
-                var data = GetSettings(authenticationClientData.AuthenticationClient.ProviderName);
+                var data = GetSettings(authenticationClientData.DisplayName);
                 externalLogin.AuthenticationClientData = authenticationClientData;
-                externalLogin.ContainerCssClass = data.ContainerCssClass;
-                externalLogin.ContainerCssStyle = data.ContainerCssStyle;
+                externalLogin.AnchorCssClass = data.AnchorCssClass;
+                externalLogin.AnchorCssStyle = data.AnchorCssStyle;
+                externalLogin.DivCssClass = data.DivCssClass;
+                externalLogin.DivCssStyle = data.DivCssStyle;
                 externalLogin.IconCssClass = data.IconCssClass;
                 this.Add(externalLogin);
             }
@@ -49,15 +51,15 @@ namespace QuizApp.UI.ViewModel
             switch (providerName)
             {
                 case "Google":
-                    return new { ContainerCssClass = @"", ContainerCssStyle = @"", IconCssClass = @"iconSocial-google" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #3b5999 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = @"iconSocial-google" };
                 case "Facebook":
-                    return new { ContainerCssClass = "", ContainerCssStyle = "", IconCssClass = "" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #e04d38 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "iconSocial-facebook" };
                 case "Microsoft":
-                    return new { ContainerCssClass = "", ContainerCssStyle = "", IconCssClass = "" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #00acee !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "iconSocial-twitter" };
                 case "Twitter":
-                    return new { ContainerCssClass = "", ContainerCssStyle = "", IconCssClass = "" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #00A600 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "iconSocial-windows8" };
                 default:
-                    return new { ContainerCssClass = "", ContainerCssStyle = "", IconCssClass = "" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #e04d38 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "" };
             }
         }
     }

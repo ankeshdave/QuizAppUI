@@ -1,25 +1,40 @@
-﻿@model ICollection<AuthenticationClientData>
+﻿@using QuizApp.UI.ViewModel
+@model ExternalLoginListViewModel
 
 @if (Model.Count == 0)
 {
-    <div class="message-info">
-        <p>There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=252166">this article</a>
-        for details on setting up this ASP.NET application to support logging in via external services.</p>
+    <div>
+        <p>There are no external authentication services configured. 
     </div>
 }
 else
 {
-    using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
-    {
-    @Html.AntiForgeryToken()
-    <fieldset id="socialLoginList">
-        <legend>Log in using another service</legend>
-        <p>
-        @foreach (AuthenticationClientData p in Model)
+    <div class="block">
+        <div class="head">
+            <h2>Log in using another service</h2>
+            <ul class="buttons">
+                <li><a href="#" onclick=" source('form_default'); return false; ">
+                        <div class="icon">
+                            <span class="ico-info"></span>
+                        </div>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="widgets">
+        @foreach (ExternalLoginViewModel loginViewModel in Model)
         {
-            <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">@p.DisplayName</button>
+            using (Html.BeginForm("ExternalLogin", "Account", new { Provider = loginViewModel.AuthenticationClientData.DisplayName, ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,htmlAttributes:new 
+                {style="float:left"}))
+            {
+                @Html.AntiForgeryToken()
+                <a class="@loginViewModel.AnchorCssClass" style="@loginViewModel.AnchorCssStyle" href="#">
+                    <div class="@loginViewModel.DivCssClass" style="@loginViewModel.DivCssStyle">
+                        <span aria-hidden="true" class="@loginViewModel.IconCssClass"></span>
+                    </div>
+                </a>
+            }
         }
-        </p>
-    </fieldset>
-    }
+    </div>
 }

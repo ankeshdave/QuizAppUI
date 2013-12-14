@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
+using QuizApp.UI.ViewModel;
 using WebMatrix.WebData;
 using QuizApp.UI.Filters;
 using QuizApp.UI.Models;
@@ -24,6 +25,9 @@ namespace QuizApp.UI.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+            var externalLoginViewModel = new ExternalLoginListViewModel();
+            externalLoginViewModel.CreateExternalLoginList(OAuthWebSecurity.RegisteredClientData);
+            ViewBag.ExternalLoginList = externalLoginViewModel;
             return View();
         }
 
@@ -304,8 +308,9 @@ namespace QuizApp.UI.Controllers
         public ActionResult ExternalLoginsList(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            
-            return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
+            var externalLoginViewModel = new ExternalLoginListViewModel();
+            externalLoginViewModel.CreateExternalLoginList(OAuthWebSecurity.RegisteredClientData);
+            return PartialView("_ExternalLoginsListPartial", externalLoginViewModel);
         }
 
         [ChildActionOnly]
