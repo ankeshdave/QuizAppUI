@@ -28,7 +28,7 @@ namespace QuizApp.UI
 
             OAuthWebSecurity.RegisterGoogleClient("Google");
 
-            OAuthWebSecurity.RegisterYahooClient("Yahoo");
+            OAuthWebSecurity.RegisterYahooClient();
         }
     }
 }

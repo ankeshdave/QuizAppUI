@@ -51,15 +51,17 @@ namespace QuizApp.UI.ViewModel
             switch (providerName)
             {
                 case "Google":
-                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #3b5999 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = @"iconSocial-google" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #e04d38 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 72px;", IconCssClass = @"icon-google" };
                 case "Facebook":
-                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #e04d38 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "iconSocial-facebook" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #3b5999 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 72px;", IconCssClass = "icon-facebook" };
                 case "Microsoft":
-                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #00acee !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "iconSocial-twitter" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #00acee !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 72px;", IconCssClass = "icon-twitter" };
                 case "Twitter":
-                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #00A600 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "iconSocial-windows8" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #00A600 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 72px;", IconCssClass = "icon-windows8" };
+                case"Yahoo":
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #720e9e !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 72px;", IconCssClass = "icon-yahoo" };
                 default:
-                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #e04d38 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 48px;", IconCssClass = "" };
+                    return new { AnchorCssClass = @"swidget", AnchorCssStyle = @"background: #000080 !important; height: 100px; width: 100px", DivCssClass = @"value", DivCssStyle = @"font-size: 72px;", IconCssClass = "ico-group" };
             }
         }
     }
