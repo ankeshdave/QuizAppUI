@@ -226,7 +226,6 @@
     <Content Include="Content\css\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
     <Content Include="Content\css\cleditor\cleditor.css" />
-    <Content Include="Content\css\demo.html" />
     <Content Include="Content\css\epiechart\jquery.easy-pie-chart.css" />
     <Content Include="Content\css\fancybox\blank.gif" />
     <Content Include="Content\css\fancybox\fancybox_loading.gif" />
@@ -236,7 +235,6 @@
     <Content Include="Content\css\fonts\icomoon.svg" />
     <Content Include="Content\css\fullcalendar\fullcalendar.css" />
     <Content Include="Content\css\icons.css" />
-    <Content Include="Content\css\iconSocial.css" />
     <Content Include="Content\css\IconSocial\demo-files\demo.css" />
     <Content Include="Content\css\IconSocial\demo-files\demo.js" />
     <Content Include="Content\css\IconSocial\Read Me.txt" />

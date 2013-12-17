@@ -307,8 +307,8 @@ $(document).ready(function(){
             $("#jDialog_form").dialog({autoOpen: false, 
                                     modal: true,
                                     width: 400,									
-									show: { effect: "slideDown", duration: 1000 },
-									hide: { effect: "slideUp", duration: 1000 },
+									show: { effect: "drop", duration: 400,direction : "up" },
+									hide: { effect: "drop", duration: 400,direction : "up" },
                                     buttons: {                            
                                         "Submit": function() {
                                             $( this ).dialog( "close" );
