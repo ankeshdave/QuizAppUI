@@ -1,4 +1,54 @@
-﻿@model QuizApp.UI.ViewModel.ExternalLoginListViewModel
+﻿@using QuizApp.UI.ViewModel
+@model QuizApp.UI.ViewModel.ExternalLoginListViewModel
+
+<div class="block">
+    <div class="head"></div>
+    <div class="data-fluid">
+        <table cellpadding="0" cellspacing="0" class="table images lcnp" width="100%">
+            <thead>
+                <tr>
+                    <th width="100">Provider</th>
+                    <th width="100">Name</th>
+                    @if (ViewBag.ShowRemoveButton)
+                    {
+                        <th width="80">Disaccociate</th>
+                    }
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (ExternalLoginViewModel externalLoginViewModel in Model)
+                {
+                    <tr>
+                        <td>
+                            <a class="@externalLoginViewModel.AnchorCssClass" style="@externalLoginViewModel.AnchorCssStyle" href="#">
+                                <div class="@externalLoginViewModel.DivCssClass" style="@externalLoginViewModel.DivCssStyle">
+                                    <span aria-hidden="true" class="@externalLoginViewModel.IconCssClass"></span>
+                                </div>
+                            </a>
+                        </td>
+                        <td>
+                            @externalLoginViewModel.AuthenticationClientData.DisplayName
+                        </td>
+                        @if (ViewBag.ShowRemoveButton)
+                        {
+
+                            <td>
+                                @using (Html.BeginForm("Disassociate", "Account"))
+                                {
+                                    <a href="#" class="button red">
+                                        <div class="icon"><span class="ico-remove2"></span></div>
+                                    </a>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 @if (Model.Count > 0)
 {
