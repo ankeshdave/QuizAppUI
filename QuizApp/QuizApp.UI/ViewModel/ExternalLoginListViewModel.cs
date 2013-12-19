@@ -24,7 +24,7 @@ namespace QuizApp.UI.ViewModel
 {
     public class ExternalLoginListViewModel : List<ExternalLoginViewModel>
     {
-        public IList<ExternalLoginViewModel> CreateExternalLoginList ( ICollection<AuthenticationClientData> authenticationClientCollection )
+        public IList<ExternalLoginViewModel> CreateExternalLoginList ( IList<AuthenticationClientData> authenticationClientCollection )
         {
             foreach (AuthenticationClientData authenticationClientData in authenticationClientCollection)
             {

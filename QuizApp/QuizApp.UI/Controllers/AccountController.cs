@@ -26,7 +26,7 @@ namespace QuizApp.UI.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             var externalLoginViewModel = new ExternalLoginListViewModel();
-            externalLoginViewModel.CreateExternalLoginList(OAuthWebSecurity.RegisteredClientData);
+            externalLoginViewModel.CreateExternalLoginList(OAuthWebSecurity.RegisteredClientData.ToList());
             ViewBag.ExternalLoginList = externalLoginViewModel;
             return View();
         }
@@ -309,29 +309,22 @@ namespace QuizApp.UI.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             var externalLoginViewModel = new ExternalLoginListViewModel();
-            externalLoginViewModel.CreateExternalLoginList(OAuthWebSecurity.RegisteredClientData);
+            externalLoginViewModel.CreateExternalLoginList(OAuthWebSecurity.RegisteredClientData.ToList());
             return PartialView("_ExternalLoginsListPartial", externalLoginViewModel);
         }
 
         [ChildActionOnly]
         public ActionResult RemoveExternalLogins()
         {
-            ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
-            List<ExternalLogin> externalLogins = new List<ExternalLogin>();
-            foreach (OAuthAccount account in accounts)
-            {
-                AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
+            var accounts =
+                OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name)
+                                .Select(account => OAuthWebSecurity.GetOAuthClientData(account.Provider));
+            var externalLoginListViewModel = new ExternalLoginListViewModel();
+            IEnumerable<AuthenticationClientData> authenticationClientDatas = accounts as IList<AuthenticationClientData> ?? accounts.ToList();
+            externalLoginListViewModel.CreateExternalLoginList(authenticationClientDatas.ToList());
 
-                externalLogins.Add(new ExternalLogin
-                {
-                    Provider = account.Provider,
-                    ProviderDisplayName = clientData.DisplayName,
-                    ProviderUserId = account.ProviderUserId,
-                });
-            }
-
-            ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-            return PartialView("_RemoveExternalLoginsPartial", externalLogins);
+            ViewBag.ShowRemoveButton = externalLoginListViewModel.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+            return PartialView("_RemoveExternalLoginsPartial", externalLoginListViewModel);
         }
 
         #region Helpers
