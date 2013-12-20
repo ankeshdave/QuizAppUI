@@ -23,7 +23,91 @@
 
 @section Scripts
 {
+
     <script type="text/javascript">
+
+        $(document).ready(function () {
+            //$(".swidget").attr("style", "background: #e04d38 !important; height: 100px; width: 100px");            
+
+            //Style Login Widgets
+            var widgets = $("#externalLoginWidgets");
+            StyleLoginWidgets(widgets);
+
+            //Style Tabe Widgets
+            var tableWidgets = $("#externalLogintable");
+            StyleTableWidgets(tableWidgets);
+
+        });
+
+        function StyleLoginWidgets(containerElement) {
+
+            var widgets = containerElement.find(".swidget");
+
+            // Style Google
+            var google = widgets.filter("#Google");
+
+            if (google.length > 0) {
+                var anchorStyle = "background: #e04d38 !important; height: 100px; width: 100px";
+                var divCssStyle = "font-size: 72px;";
+                var iconCssStyle = "ico-google";
+                StyleExternalProvider(google, anchorStyle, divCssStyle, iconCssStyle);
+            }
+
+            //Style Yahoo
+            var yahoo = widgets.filter("#Yahoo");
+
+            if (yahoo.length > 0) {
+                anchorStyle = "background: #720e9e !important; height: 100px; width: 100px";
+                divCssStyle = "font-size: 72px;";
+                iconCssStyle = "ico-yahoo";
+                StyleExternalProvider(yahoo, anchorStyle, divCssStyle, iconCssStyle);
+            }
+        }
+
+        function StyleTableWidgets(containerElement) {
+
+            var widgets = containerElement.find(".swidget");
+
+            // Style Google
+            var google = widgets.filter("#Google");
+
+            if (google.length > 0) {
+                var anchorStyle = "background: #e04d38 !important; height: 48px; width: 48px;min-width: inherit;margin-bottom: auto;margin-right: auto;";
+                var divCssStyle = "font-size: 36px;height: 48px;width:48px;line-height: normal;margin-top: auto;";
+                var iconCssStyle = "ico-google";
+                StyleExternalProvider(google, anchorStyle, divCssStyle, iconCssStyle);
+            }
+
+            //Style Yahoo
+            var yahoo = widgets.filter("#Yahoo");
+
+            if (yahoo.length > 0) {
+                anchorStyle = "background: #e04d38 !important; height: 48px; width: 48px;min-width: inherit;margin-bottom: auto;margin-right: auto;";
+                divCssStyle = "font-size: 36px;height: 48px;width:48px;line-height: normal;margin-top: auto;";
+                iconCssStyle = "ico-yahoo";
+                StyleExternalProvider(yahoo, anchorStyle, divCssStyle, iconCssStyle);
+            }
+        }
+
+        function StyleExternalProvider(anchorElement, anchorStyle, divCssStyle, iconCssClass) {
+
+            anchorElement.attr("style", anchorStyle);
+            var innerDiv = anchorElement.find(".value");
+            innerDiv.attr("style", divCssStyle);
+            innerDiv.children('span').attr("class", iconCssClass);
+        }
+
+        $(document).ready(function () {
+
+            var widgets = $("#externalLoginWidgets").find(".swidget");
+
+            widgets.on("click", function (e) {
+                e.preventDefault();
+                var form = $(this).closest("form");
+                form.submit();
+            });
+        });
+
         $(document).ready(function () {
             $('#validateChangePasswordForm').validationEngine('attach', { promptPosition: "topLeft" });
             $('#hidePromptChangePasswordForm').on('click', function () {
@@ -31,4 +115,5 @@
             });
         });
     </script>
+
 }

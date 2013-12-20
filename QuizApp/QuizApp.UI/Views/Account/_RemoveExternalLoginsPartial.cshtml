@@ -1,10 +1,10 @@
-﻿@using QuizApp.UI.ViewModel
-@model QuizApp.UI.ViewModel.ExternalLoginListViewModel
+﻿@using QuizApp.UI.Models
+@model IList<ExternalLogin>
 
 <div class="block">
     <div class="head"></div>
     <div class="data-fluid">
-        <table cellpadding="0" cellspacing="0" class="table images lcnp" width="100%">
+        <table cellpadding="0" cellspacing="0" class="table images lcnp" width="100%" id="externalLogintable">
             <thead>
                 <tr>
                     <th width="100">Provider</th>
@@ -17,18 +17,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (ExternalLoginViewModel externalLoginViewModel in Model)
+                @foreach (ExternalLogin externalLogin in Model)
                 {
                     <tr>
                         <td>
-                            <a class="@externalLoginViewModel.AnchorCssClass" style="@externalLoginViewModel.AnchorCssStyle" href="#">
-                                <div class="@externalLoginViewModel.DivCssClass" style="@externalLoginViewModel.DivCssStyle">
-                                    <span aria-hidden="true" class="@externalLoginViewModel.IconCssClass"></span>
+                            <a id="@externalLogin.ProviderDisplayName" class="swidget" href="#">
+                                <div class="value">
+                                    <span aria-hidden="true"></span>
                                 </div>
                             </a>
                         </td>
                         <td>
-                            @externalLoginViewModel.AuthenticationClientData.DisplayName
+                            @externalLogin.ProviderDisplayName
                         </td>
                         @if (ViewBag.ShowRemoveButton)
                         {
@@ -36,6 +36,7 @@
                             <td>
                                 @using (Html.BeginForm("Disassociate", "Account"))
                                 {
+                                    @Html.AntiForgeryToken()
                                     <a href="#" class="button red">
                                         <div class="icon"><span class="ico-remove2"></span></div>
                                     </a>
@@ -50,7 +51,7 @@
 </div>
 
 
-@if (Model.Count > 0)
+@*@if (Model.Count > 0)
 {
     <h3>Registered external logins</h3>
     <table>
@@ -81,4 +82,4 @@
         }
         </tbody>
     </table>
-}
+}*@

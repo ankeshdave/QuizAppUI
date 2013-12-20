@@ -22,16 +22,16 @@ else
         </div>
     </div>
 
-    <div class="widgets">
+    <div class="widgets" id="externalLoginWidgets">
         @foreach (ExternalLoginViewModel loginViewModel in Model)
         {
             using (Html.BeginForm("ExternalLogin", "Account", new { Provider = loginViewModel.AuthenticationClientData.DisplayName, ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,htmlAttributes:new 
                 {style="float:left"}))
             {
                 @Html.AntiForgeryToken()
-                <a class="@loginViewModel.AnchorCssClass" style="@loginViewModel.AnchorCssStyle" href="#">
-                    <div class="@loginViewModel.DivCssClass" style="@loginViewModel.DivCssStyle">
-                        <span aria-hidden="true" class="@loginViewModel.IconCssClass"></span>
+                <a id="@loginViewModel.AuthenticationClientData.DisplayName" class="swidget" href="#">
+                    <div class="value">
+                        <span aria-hidden="true"></span>
                     </div>
                 </a>
             }

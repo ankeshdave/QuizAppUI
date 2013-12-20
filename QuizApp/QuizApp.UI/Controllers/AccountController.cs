@@ -316,15 +316,22 @@ namespace QuizApp.UI.Controllers
         [ChildActionOnly]
         public ActionResult RemoveExternalLogins()
         {
-            var accounts =
-                OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name)
-                                .Select(account => OAuthWebSecurity.GetOAuthClientData(account.Provider));
-            var externalLoginListViewModel = new ExternalLoginListViewModel();
-            IEnumerable<AuthenticationClientData> authenticationClientDatas = accounts as IList<AuthenticationClientData> ?? accounts.ToList();
-            externalLoginListViewModel.CreateExternalLoginList(authenticationClientDatas.ToList());
+            var externalAccountList = new List<ExternalLogin>();
 
-            ViewBag.ShowRemoveButton = externalLoginListViewModel.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-            return PartialView("_RemoveExternalLoginsPartial", externalLoginListViewModel);
+            foreach (OAuthAccount oAuthAccount in OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name))
+            {
+                var authenticationData = OAuthWebSecurity.GetOAuthClientData(oAuthAccount.Provider);
+                var externalLogin = new ExternalLogin
+                {
+                    Provider = oAuthAccount.Provider,
+                    ProviderUserId = oAuthAccount.ProviderUserId,
+                    ProviderDisplayName = authenticationData.DisplayName
+                };
+
+                externalAccountList.Add(externalLogin);
+            }
+            ViewBag.ShowRemoveButton = externalAccountList.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+            return PartialView("_RemoveExternalLoginsPartial", externalAccountList);
         }
 
         #region Helpers
