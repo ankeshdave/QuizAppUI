@@ -25,6 +25,10 @@ namespace QuizApp.UI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
             AntiForgeryConfig.SuppressIdentityHeuristicChecks = true;
+#if DEBUG
+            BundleTable.EnableOptimizations = false; 
+#endif
+            
         }
     }
 }

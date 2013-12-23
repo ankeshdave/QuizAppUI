@@ -25,6 +25,11 @@
                                 <div class="value">
                                     <span aria-hidden="true"></span>
                                 </div>
+                                <div class="bottom">
+                                    <div class="text">
+                                        @externalLogin.ProviderDisplayName
+                                    </div>
+                                </div>
                             </a>
                         </td>
                         <td>
@@ -38,7 +43,9 @@
                                 {
                                     @Html.AntiForgeryToken()
                                     <a href="#" class="button red">
-                                        <div class="icon"><span class="ico-remove2"></span></div>
+                                        <div class="icon">
+                                            <span class="ico-remove2"></span>
+                                        </div>
                                     </a>
                                 }
                             </td>
