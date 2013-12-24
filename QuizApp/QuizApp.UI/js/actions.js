@@ -2,10 +2,10 @@ $(document).ready(function () {
 
 	/* open Mail Modal */
 	$("#sendMailModal").dialog({
-		autoOpen: false,
-		modal: true,
-		width: 600,
-		open: function () {
+		autoOpen : false,
+		modal : true,
+		width : 600,
+		open : function (){
 			if ($("#mail_wysiwyg").length > 0) m_editor.refresh();
 			fix();
 		}
@@ -23,7 +23,8 @@ $(document).ready(function () {
 		$.cookies.set('cNav', 'bordered');
 		$.cookies.set('cNavC', 'color_1');
 		$.cookies.set('cTopNavH', 'show');
-	};
+	}
+	;
 
 	var cNav = $.cookies.get('cNav');
 	var cNavC = $.cookies.get('cNavC');
@@ -35,39 +36,48 @@ $(document).ready(function () {
 			$(".sidebar .navigation").addClass('bordered');
 			$(".cNav").attr('checked', false);
 			$(".cNav[value='bordered']").attr('checked', true).parent('span').addClass('checked');
-		};
-	} else {
+		}
+		;
+	}
+	else {
 		$(".cNav[value='default']").attr('checked', true).parent('span').addClass('checked');
-	};
+	}
+	;
 	if (null != cNavC) {
 		$(".sidebar").addClass(cNavC);
 		$('.' + cNavC).addClass('on');
-	};
+	}
+	;
 	if (null != cTopNavH) {
 
 		if (cTopNavH == 'hide') {
 			$(".body .navigation").addClass('hide');
-		} else {
+		}
+		else {
 			$(".body .navigation").removeClass('hide');
-		};
+		}
+		;
 		$(".body .navigation").children('li').last().addClass('last');
 		$(".cTopNavH[value='" + cTopNavH + "']").attr('checked', true).parent('span').addClass('checked');
-	};
+	}
+	;
 	if (null != cCont) {
 		$(".wrapper").addClass(cCont);
 		$(".cCont").attr('checked', false);
 		$(".cCont[value='" + cCont + "']").attr('checked', true).parent('span').addClass('checked');
-	} else {
+	}
+	else {
 		$(".cCont[value='']").attr('checked', true).parent('span').addClass('checked');
-	};
-
+	}
+	;
 
 	$(".cNav").click(function () {
 		var val = $(this).val();
 		if (val != 'default') {
 			$(".sidebar .navigation").addClass(val);
 			$.cookies.set('cNav', val);
-		} else {
+		}
+		else {
 			$(".sidebar .navigation").removeClass('bordered');
 			$.cookies.set('cNav', null);
 		}
@@ -90,9 +100,11 @@ $(document).ready(function () {
 		var val = $(this).val();
 		if (val == 'hide') {
 			$(".body .navigation").addClass('hide');
-		} else {
+		}
+		else {
 			$(".body .navigation").removeClass('hide');
-		};
+		}
+		;
 		$.cookies.set('cTopNavH', val);
 	});
 
@@ -108,10 +120,8 @@ $(document).ready(function () {
 		var li = $(this).parent('li');
 		if (li.find('ul').length > 0) {
 
-			if (li.hasClass('active'))
-				li.removeClass('active');
-			else
-				li.addClass('active');
+			if (li.hasClass('active')) li.removeClass('active');
+			else li.addClass('active');
 
 			return false;
 		}
@@ -119,18 +129,14 @@ $(document).ready(function () {
 	});
 
 	$(".navButton a, .sidebar .close").click(function () {
-		if ($(".sidebar").is(":visible"))
-			$(".sidebar").slideUp();
-		else
-			$(".sidebar").slideDown();
+		if ($(".sidebar").is(":visible")) $(".sidebar").slideUp();
+		else $(".sidebar").slideDown();
 	});
-
 
 	$(".sbutton a").click(function () {
 		var popup = $(this).parent('.sbutton').find('.popup');
 		if (popup.length > 0) {
-			if (popup.hasClass('active'))
-				popup.removeClass('active');
+			if (popup.hasClass('active')) popup.removeClass('active');
 			else {
 				popup.addClass('active');
 				popup.find('.checker').show();
@@ -163,43 +169,42 @@ $(document).ready(function () {
 		return false;
 	});
 
-
 	$(".head .buttons > li > a").click(function (event) {
 		var li = $(this).parent('li');
 		if (li.find('ul').length > 0) {
-			if (li.hasClass('active'))
-				li.removeClass('active');
-			else
-				li.addClass('active');
+			if (li.hasClass('active')) li.removeClass('active');
+			else li.addClass('active');
 			return false;
 		}
 		event.stopPropagation();
 	});
 
-
 	$(".cblock").click(function () {
 		var block = $(this).parents('.block').find("[class^=data]");
 		if (block.is(':visible')) {
 			block.fadeOut();
-		} else {
+		}
+		else {
 			block.fadeIn();
 		}
 
 		return false;
 	});
 
-
 	$(".body .navigation li").on('click', 'a', function () {
 		if ($(this).attr('href') == '#') {
 			if ($(this).parent('li').hasClass("active")) {
 				$(this).parent('li').removeClass('active');
-			} else {
+			}
+			else {
 				$(".body .navigation li").removeClass('active');
 				$(this).parent('li').addClass('active');
-			};
+			}
+			;
 
 			return false;
-		};
+		}
+		;
 	});
 
 	/*$(".body .navigation .sub").each(function() {
@@ -214,7 +219,8 @@ $(document).ready(function () {
 		if ($(this).parent('li').find('ul').length > 0) {
 			if ($(this).parent('li').hasClass('active')) {
 				$(this).parent('li').removeClass('active');
-			} else {
+			}
+			else {
 				$(this).parent('li').addClass('active');
 			}
 			return false;
@@ -243,10 +249,8 @@ $(document).ready(function () {
 
 		var tr = $(this).parents('tr');
 
-		if (tr.hasClass('active'))
-			tr.removeClass('active');
-		else
-			tr.addClass('active');
+		if (tr.hasClass('active')) tr.removeClass('active');
+		else tr.addClass('active');
 
 		event.stopPropagation();
 	});
@@ -254,16 +258,15 @@ $(document).ready(function () {
 	/* table row check */
 	$(".table-row-check tbody tr").click(function () {
 
-		if ($(this).hasClass('active'))
-			$(this).removeClass('active');
-		else
-			$(this).addClass('active');
+		if ($(this).hasClass('active')) $(this).removeClass('active');
+		else $(this).addClass('active');
 
 		$(this).find('input:checkbox').each(function () {
 
 			if ($(this).is(':checked')) {
 				$(this).attr('checked', false).parent('span').removeClass('checked');
-			} else {
+			}
+			else {
 				$(this).attr('checked', true).parent('span').addClass('checked');
 			}
 
@@ -274,14 +277,27 @@ $(document).ready(function () {
 
 	/* alert click */
 	$(".alert").click(function () {
-		$(this).animate({ opacity: 0 }, '200', 'linear', function () {
+		$(this).animate({ opacity : 0 }, '200', 'linear', function () {
 			$(this).remove();
 		});
 	});
 	/* eof alert click*/
 
-});
+	/*Clock*/
+	var clock = $('.clock');
+	if (clock.length > 0) {
+		updateClock(clock);
+		setInterval(updateClock(clock), 60 * 1000);
+	}
+	/*eof Clock*/
 
+});
+function updateClock(clock) {
+	var time = new Date;
+	clock.text(((time.getHours() % 12) || 12).toString() + ":"
+			+ time.getMinutes().toString().padLeft(2, '0')
+			+ (time.getHours() < 12 ? " AM" : " PM"));
+}
 $(window).load(function(){    
 	fix();    
 	$("#loader").hide();

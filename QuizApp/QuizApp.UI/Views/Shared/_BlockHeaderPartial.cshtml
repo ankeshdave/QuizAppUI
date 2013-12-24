@@ -1,0 +1,15 @@
+﻿@model QuizApp.UI.ViewModel.BlockHeaderViewModel
+
+<div class="head">                                
+    <h2>@Model.HeaderText</h2>
+    <ul class="buttons">             
+        <li>
+            <a href="#" onClick="source('@Model.HelpTextIdentifier'); return false;">
+                <div class="icon">
+                    <span class="ico-info">
+                    </span>
+                </div>
+            </a>
+        </li>
+    </ul>                                  
+</div>

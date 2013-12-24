@@ -16,17 +16,9 @@
         <div class="row-fluid">
             <div class="span6">
                 <div class="block">
-                    <div class="head">
-                        <h2>
-                            Registered Users</h2>
-                        <ul class="buttons">
-                            <li><a href="#" onclick=" source('form_default'); return false; ">
-                                    <div class="icon">
-                                        <span class="ico-info"></span>
-                                    </div>
-                                </a></li>
-                        </ul>
-                    </div>
+
+                            @Html.Partial("_BlockHeaderPartial", new BlockHeaderViewModel() { HeaderText = "Registered Users", HelpTextIdentifier = "Registered_Users" })  
+
                     <div class="data-fluid">
                         @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, htmlAttributes: new { @id = "validateLoginForm", @name = "validateLoginForm" }))
                         {
@@ -69,37 +61,6 @@
         </div>
     </div>
 </div>
-@section ModalDivAndExtras
-{
-    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable sourcePosition"
-         tabindex="-1" role="dialog" style="position: fixed; height: auto; width: 1623px;
-                                                                                              top: 214.5px; left: 20px; display: none;" aria-describedby="source" aria-labelledby="ui-id-1">
-        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-            <span id="ui-id-1" class="ui-dialog-title">Source</span>
-            <button class="ui-dialog-titlebar-close"></button>
-        </div>
-        <div class="dialog ui-dialog-content ui-widget-content" id="source" style="width: auto;
-                                                                                         min-height: 89px; max-height: none; height: auto;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"
-             style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;">
-        </div>
-        <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;">
-        </div>
-    </div>
-}
 
 @section Scripts_MasterLayout
 {

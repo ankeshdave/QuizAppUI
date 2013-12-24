@@ -10,16 +10,9 @@
 else
 {
     <div class="block">
-        <div class="head">
-            <h2>Log in using another service</h2>
-            <ul class="buttons">
-                <li><a href="#" onclick=" source('form_default'); return false; ">
-                        <div class="icon">
-                            <span class="ico-info"></span>
-                        </div>
-                    </a></li>
-            </ul>
-        </div>
+
+        @Html.Partial("_BlockHeaderPartial", new BlockHeaderViewModel() { HeaderText = "Log in using another service", HelpTextIdentifier = "External_Login" })  
+
     </div>
 
     <div class="widgets" id="externalLoginWidgets">

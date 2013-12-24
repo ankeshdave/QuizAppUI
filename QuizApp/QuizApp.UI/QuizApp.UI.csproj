@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\BlockHeaderViewModel.cs" />
     <Compile Include="ViewModel\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModel\ExternalLoginViewModel.cs" />
   </ItemGroup>
@@ -531,6 +532,7 @@
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\modernizr-2.7.1.js" />
+    <Content Include="Scripts\ViewScripts\Register.js" />
     <Content Include="Scripts\ViewScripts\Login.js" />
     <Content Include="Scripts\ViewScripts\Manage.js" />
     <Content Include="Web.config" />
@@ -577,6 +579,7 @@
     <Content Include="Views\Shared\_BreadCrumPartial.cshtml" />
     <Content Include="Views\Shared\_SidebarDefaultPartial.cshtml" />
     <Content Include="Views\Shared\_PageHeaderWithBreadCrumsPartial.cshtml" />
+    <Content Include="Views\Shared\_BlockHeaderPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
@@ -601,7 +604,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>14518</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
