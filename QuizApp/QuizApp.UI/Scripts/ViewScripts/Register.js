@@ -4,7 +4,7 @@ $(document).ready(function () {
     /*Register User Form Start*/
     $('#validateRegisterForm').validationEngine('attach', { promptPosition : "topLeft" });
     $('#hidePromptRegisterForm').on('click', function () {
-        $('#hidePromptRegisterForm').validationEngine('hide');
+        $('#validateRegisterForm').validationEngine('hide');
     });
-    /*Register User Form Start*/
+    /*Register User Form End*/
 });
