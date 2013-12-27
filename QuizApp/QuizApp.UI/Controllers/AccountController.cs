@@ -70,6 +70,25 @@ namespace QuizApp.UI.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Serves Ajax request to confirm availability of User Name
+        /// </summary>
+        /// <param name="fieldId"></param>
+        /// <param name="fieldValue"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult CheckUserNameAvailability(string fieldId, string fieldValue)
+        {
+            var userName = fieldValue.Trim();
+            if (!String.IsNullOrEmpty(userName))
+            {
+                var status = WebSecurity.UserExists(userName);
+                return Json(new object[] {fieldId,!status});
+            }
+            return Json(new object[] { fieldId, false,"Invalid UserName" });
+        }
+
         //
         // POST: /Account/Register
 

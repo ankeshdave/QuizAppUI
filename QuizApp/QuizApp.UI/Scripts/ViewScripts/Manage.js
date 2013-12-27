@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     /*Change Password Form Start*/
 
-    $('#validateChangePasswordForm').validationEngine('attach', { promptPosition: "topLeft" });
+    $('#validateChangePasswordForm').validationEngine('attach', { promptPosition: "topRight" });
     $('#hidePromptChangePasswordForm').on('click', function () {
         $('#validateChangePasswordForm').validationEngine('hide');
     });

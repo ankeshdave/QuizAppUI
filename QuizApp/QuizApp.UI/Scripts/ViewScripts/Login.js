@@ -39,7 +39,7 @@ $(document).ready(function () {
     /*Login Form Start*/
 
     //Start Validation
-    $('#validateLoginForm').validationEngine('attach', { promptPosition: "topLeft" });
+    $('#validateLoginForm').validationEngine('attach', { promptPosition: "topRight" });
 
     /*Login Form Start*/
 

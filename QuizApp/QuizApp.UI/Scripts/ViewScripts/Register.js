@@ -2,7 +2,10 @@
 
 $(document).ready(function () {
     /*Register User Form Start*/
-    $('#validateRegisterForm').validationEngine('attach', { promptPosition : "topLeft" });
+    $('#validateRegisterForm').validationEngine('attach', {
+         promptPosition : "topRight",
+         ajaxFormValidationMethod: 'post'
+    });
     $('#hidePromptRegisterForm').on('click', function () {
         $('#validateRegisterForm').validationEngine('hide');
     });
