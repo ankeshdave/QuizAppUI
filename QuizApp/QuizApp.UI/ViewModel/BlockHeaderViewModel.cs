@@ -27,6 +27,8 @@ namespace QuizApp.UI.ViewModel
         /// Identifier for the help Text
         /// </summary>
         public string HelpTextIdentifier { get; set; }
+
+        public bool ShowInfo { get; set; }
     }
 }
 

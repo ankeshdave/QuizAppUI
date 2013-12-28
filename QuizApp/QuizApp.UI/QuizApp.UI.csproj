@@ -227,6 +227,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\FeedbackModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BlockHeaderViewModel.cs" />
     <Compile Include="ViewModel\ExternalLoginListViewModel.cs" />
@@ -533,6 +534,7 @@
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\modernizr-2.7.1.js" />
     <Content Include="Scripts\ViewScripts\ContactUsMap.js" />
+    <Content Include="Scripts\ViewScripts\Feedback.js" />
     <Content Include="Scripts\ViewScripts\Register.js" />
     <Content Include="Scripts\ViewScripts\Login.js" />
     <Content Include="Scripts\ViewScripts\Manage.js" />
@@ -582,6 +584,8 @@
     <Content Include="Views\Shared\_PageHeaderWithBreadCrumsPartial.cshtml" />
     <Content Include="Views\Shared\_BlockHeaderPartial.cshtml" />
     <Content Include="Views\Shared\_ContactMapPartial.cshtml" />
+    <Content Include="Views\Shared\_DashboardPartial.cshtml" />
+    <Content Include="Views\Shared\_AdminVisitorsStatsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
