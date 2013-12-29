@@ -1,0 +1,15 @@
+﻿/* Body */
+	.body{position: relative; margin-left: 250px; padding: 0px 0px 0px 20px;}   
+    .body .cards{ width: 100px;
+    height: 100px;}
+.body .cards .l-card--a {
+   
+    display: block; padding: 5px;
+									  background: #009AD7; text-decoration: none; position: relative;
+}
+
+.body .cards .l-card--b {
+   
+    display: block; padding: 5px;
+									  background: #009AD7; text-decoration: none; position: relative;
+}
