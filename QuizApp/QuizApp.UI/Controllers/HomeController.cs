@@ -10,7 +10,7 @@ namespace QuizApp.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IList<string> _reasonsList = new List<string>() {"", "Reason1", "Reason2"};
+        private readonly IList<string> _reasonsList = new List<string>() {"Reason1", "Reason2"};
 
         
         public ActionResult Index()
