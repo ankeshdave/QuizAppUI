@@ -27,7 +27,7 @@
                        </div>
                        <div class="row-form">
                            <div class="span12">
-                               @Html.DropDownListFor(m => m.Reason, (IEnumerable<SelectListItem>)ViewBag.DropDownList, new { @id = "reason", @name = "reason", @class = "validate[required]" })
+                               @Html.DropDownListFor(m => m.Reason, (IEnumerable<SelectListItem>)ViewBag.DropDownList,"--Select Reason--", new { @id = "reason", @name = "reason", @class = "validate[required]" })
                                @Html.ValidationMessageFor(m=> m.Reason)
                            </div>
                        </div>
