@@ -10,7 +10,7 @@ namespace QuizApp.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IList<string> _reasonsList = new List<string>() { "Reason1", "Reason2" };
+        private readonly IList<string> _reasonsList = new List<string>() {"", "Reason1", "Reason2"};
 
         
         public ActionResult Index()
@@ -37,7 +37,7 @@ namespace QuizApp.UI.Controllers
         public ActionResult Contact(FeedbackModel feedbackModel)
         {
             ViewBag.Message = "Your contact page.";
-            
+            ViewBag.DropDownList = new SelectList(_reasonsList);
             return View();
         }
     }
