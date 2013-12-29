@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\FeedbackModel.cs" />
+    <Compile Include="Models\RecentActivitiesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BlockHeaderViewModel.cs" />
     <Compile Include="ViewModel\ExternalLoginListViewModel.cs" />
@@ -586,6 +587,7 @@
     <Content Include="Views\Shared\_ContactMapPartial.cshtml" />
     <Content Include="Views\Shared\_DashboardPartial.cshtml" />
     <Content Include="Views\Shared\_AdminVisitorsStatsPartial.cshtml" />
+    <Content Include="Views\Shared\_RecentActivitiesPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
