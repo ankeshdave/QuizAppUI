@@ -13,6 +13,9 @@
         <div class="data-fluid">
                    @using (Html.BeginForm("Contact", "Home", new { ViewBag.ReturnUrl }, FormMethod.Post, htmlAttributes: new { @id = "validateFeedbackForm", @name = "validateFeedbackForm" }))
                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary()
+                       
                        <div class="row-form">
                            <div class="span12">
                                @Html.TextBoxFor(m => m.Name, new { @id = "name", @name = "name", placeholder = "name", @class = "validate[required]" })
@@ -46,7 +49,9 @@
                         </div>
                     </div>
                  }
-            
+            <p id="confirmation" onclick="MessageConfirmation()">
+                <h3>Thanks for your feedback!</h3>
+            </p>
                     
         </div>
     </div>        

@@ -38,6 +38,10 @@ namespace QuizApp.UI.Controllers
         {
             ViewBag.Message = "Your contact page.";
             ViewBag.DropDownList = new SelectList(_reasonsList);
+            
+            if(Request.IsAjaxRequest())
+                return Json(new {Status = true});
+            
             return View();
         }
     }
