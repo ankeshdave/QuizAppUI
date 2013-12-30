@@ -227,7 +227,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CourseInfoModel.cs" />
     <Compile Include="Models\FeedbackModel.cs" />
+    <Compile Include="Models\RecentActivitiesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BlockHeaderViewModel.cs" />
     <Compile Include="ViewModel\ExternalLoginListViewModel.cs" />
@@ -241,6 +243,7 @@
     <Content Include="Content\css\bootstrap\bootstrap-fileupload.css" />
     <Content Include="Content\css\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\cardstylesheet.css" />
     <Content Include="Content\css\cleditor\cleditor.css" />
     <Content Include="Content\css\epiechart\jquery.easy-pie-chart.css" />
     <Content Include="Content\css\fancybox\blank.gif" />
@@ -586,6 +589,8 @@
     <Content Include="Views\Shared\_ContactMapPartial.cshtml" />
     <Content Include="Views\Shared\_DashboardPartial.cshtml" />
     <Content Include="Views\Shared\_AdminVisitorsStatsPartial.cshtml" />
+    <Content Include="Views\Shared\_RecentActivitiesPartialView.cshtml" />
+    <Content Include="Views\Home\Courses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

@@ -17,6 +17,11 @@ namespace QuizApp.UI.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            var activities = new RecentActivitiesModel();
+            activities.Activities.Add( new Activity(){ActivityType = ActivityType.TestTake, CreatedOn = DateTime.Now,Message = "Temp1", State = ActivityState.New});
+            activities.Activities.Add(new Activity() { ActivityType = ActivityType.TestTake, CreatedOn = DateTime.Now, Message = "Temp2", State = ActivityState.New });
+            activities.Activities.Add(new Activity() { ActivityType = ActivityType.TestTake, CreatedOn = DateTime.Now, Message = "Temp3", State = ActivityState.New });
+            ViewBag.ActivityModel = activities;
 
             return View();
         }
@@ -25,6 +30,13 @@ namespace QuizApp.UI.Controllers
         {
             ViewBag.Message = "Your app description page.";
 
+            return View();
+        }
+
+        public ActionResult Courses()
+        {
+            ViewBag.Message = "Your contact page.";
+            ViewBag.DropDownList = new SelectList(_reasonsList);
             return View();
         }
 

@@ -3,6 +3,14 @@
     Layout = "~/Views/Shared/_LayoutPageWithSideBar.cshtml";
 }
 
+<div class ="row-fluid">
+    <div class ="span6">
+    @Html.Partial("_RecentActivitiesPartialView", (object)ViewBag.ActivityModel)     
+    </div>
+    
+</div>
+
+
 <div class="row-fluid">
     <h3>We suggest the following:</h3>
     <ol class="round">
@@ -30,7 +38,7 @@
         </li>
     </ol>
 </div>
-@section featured {
+@*@section featured {
     <div class="row-fluid">
         <hgroup class="title">
             <h1>@ViewBag.Title.</h1>
@@ -44,5 +52,5 @@
             <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
         </p>
     </div>
-}
+}*@
 

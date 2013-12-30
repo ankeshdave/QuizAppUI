@@ -8,7 +8,7 @@
 
 <div class="clear"></div>
 
-@RenderSection("featured", required: false)
+@*@RenderSection("featured", required: false)*@
 @RenderBody()
 
 
@@ -34,7 +34,7 @@
     @* Navigation Start  *@
     <ul class="navigation">
         <li>
-            <a href="@Url.Action("Index", "Home")" class="button">
+            <a href="@Url.Action("Index", "Home")" class="button blue">
                 <div class="icon">
                     <span class="ico-monitor"></span>
                 </div>
@@ -42,7 +42,7 @@
             </a>
         </li>
         <li>
-            <a href="@Url.Action("About", "Home")" class="button yellow">
+            <a href="@Url.Action("About", "Home")" class="button blue">
                 <div class="icon">
                     <span class="ico-monitor"></span>
                 </div>
@@ -50,7 +50,15 @@
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Contact", "Home")" class="button green">
+            <a href="@Url.Action("Courses", "Home")" class="button blue">
+                <div class="icon">
+                    <span class="ico-monitor"></span>
+                </div>
+                <div class="name">Courses</div>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Contact", "Home")" class="button blue">
                 <div class="icon">
                     <span class="ico-monitor"></span>
                 </div>
