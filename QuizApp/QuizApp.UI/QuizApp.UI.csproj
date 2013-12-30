@@ -534,7 +534,7 @@
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\modernizr-2.7.1.js" />
     <Content Include="Scripts\ViewScripts\ContactUsMap.js" />
-    <Content Include="Scripts\ViewScripts\Feedback.js" />
+    <Content Include="Scripts\ViewScripts\ContactUs.js" />
     <Content Include="Scripts\ViewScripts\Register.js" />
     <Content Include="Scripts\ViewScripts\Login.js" />
     <Content Include="Scripts\ViewScripts\Manage.js" />
