@@ -243,6 +243,7 @@
     <Content Include="Content\css\bootstrap\bootstrap-fileupload.css" />
     <Content Include="Content\css\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\cardstylesheet.css" />
     <Content Include="Content\css\cleditor\cleditor.css" />
     <Content Include="Content\css\epiechart\jquery.easy-pie-chart.css" />
     <Content Include="Content\css\fancybox\blank.gif" />

@@ -1,15 +1,230 @@
-﻿/* Body */
-	.body{position: relative; margin-left: 250px; padding: 0px 0px 0px 20px;}   
-    .body .cards{ width: 100px;
-    height: 100px;}
-.body .cards .l-card--a {
-   
-    display: block; padding: 5px;
-									  background: #009AD7; text-decoration: none; position: relative;
+﻿.body .content .cards
+{
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+.body .content .card
+{
+    padding: 10px;
+    height: 300px;
+    width: 350px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: inline-block;
 }
 
-.body .cards .l-card--b {
-   
-    display: block; padding: 5px;
-									  background: #009AD7; text-decoration: none; position: relative;
+.body .content .card .left, .body .content .card .right
+{
+    /* changed from 90 to 280 to push the bottom elements*/
+    height: 280px;
+    width: 50%;
+    float: left;
+    color: #fff;
 }
+
+
+.body .content .cardcard.value .left
+{
+    width: 60%;
+    font-size: 80px;
+    line-height: 75px;
+    text-align: left;
+    font-weight: lighter;
+}
+.body .content .card.value .right
+{
+    width: 40%;
+    font-size: 12px;
+    text-align: left;
+    line-height: 15px;
+}
+
+.body .content .card.icon .left
+{
+    width: 35%;
+    line-height: 90px;
+}
+.body .content .card.icon .right
+{
+    width: 65%;
+    font-size: 12px;
+    color: #FFF;
+    color: #fff;
+}
+
+.body .content .card.chart .left
+{
+    width: 40%;
+    line-height: 90px;
+    text-align: left;
+}
+.body .content .card.chart .right
+{
+    width: 60%;
+    font-size: 12px;
+    color: #FFF;
+    color: #fff;
+    text-align: left;
+    line-height: 15px;
+}
+
+.body .content .card .right table
+{
+    text-align: left;
+}
+.body .content .card .right table tr td
+{
+    line-height: 12px;
+    font-size: 12px;
+    padding: 2px 0px 3px;
+}
+.body .content .card .right table tr td:last-child
+{
+    text-align: right;
+}
+
+.body .content .card.icon .left .icon
+{
+    width: 80px;
+    height: 80px;
+    /*border: 3px solid #FFF;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;*/
+}
+.body .content .card.icon .left .icon [class^="ico-"]
+{
+    vert-align: middle;
+    /*Changed font size from 56 to 72*/
+    font-size: 72px;
+}
+
+.body .content .card .bottom
+{
+    width: 100%;
+    line-height: 16px;
+    margin-top: 4px;
+    float: left;
+    text-align: left;
+}
+.body .content .card .bottom a
+{
+    display: block;
+    float: left;
+    width: 100%;
+    line-height: 16px;
+    font-size: 14px;
+    color: #FFF;
+    text-decoration: none;
+    background: url('../img/arrow_right_white.png') right center no-repeat;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+.body .content .card .bottom a:hover
+{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+
+/*.cards
+{
+    padding: 10px 0px 25px;
+    margin: 0px;
+    list-style: none;
+    display: block;
+    position: relative;
+}
+.cards .l-card
+{
+    background: currentColor;
+    display: inline-block;
+    position: relative;
+}
+.cards [class^="l-card"] .icon
+{
+    height: 40%;
+    width: 30%;
+    margin: 20px;
+    vertical-align: top;
+    horiz-align: left;
+    position: relative;
+}
+
+.cards [class^="l-card"] .icon [class^="ico-"]
+{
+  font-size: 100px;
+}
+
+.cards .l-card--a
+{
+    background: yellowgreen;
+}
+
+.cards .l-card--b
+{
+    border: 1px solid blue;
+    background: transparent;
+}
+
+.cards [class^="l-card"] .caption 
+{
+    color: currentColor;
+    margin: 5px;
+    vertical-align: bottom;
+    font-size: 12px;
+}
+
+.cards [class^="l-card"] .description 
+{
+    width: 60%;
+    position: relative;
+    color: currentColor;
+    margin: 5px;
+    font-size: 12px;
+}
+.cards .l-card.icon .left {
+    width: 60%;
+    font-size: 80px;
+    line-height: 75px;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.cards .l-card.icon .right {
+    width: 40%;
+    font-size: 12px;
+    text-align: left;
+    line-height: 15px;
+}
+.cards .l-card.value .left {
+    width: 60%;
+    font-size: 80px;
+    line-height: 75px;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.cards .l-card.value .right {
+    width: 40%;
+    font-size: 12px;
+    text-align: left;
+    line-height: 15px;
+}
+
+.cards .l-card .left, .cards .l-card .right {
+    height: 90px;
+    width: 50%;
+    float: left;
+    color: rgb(255, 255, 255);
+}
+
+.cards .l-card .bottom {
+    width: 100%;
+    line-height: 16px;
+    margin-top: 4px;
+    float: left;
+    text-align: left;
+}*/
