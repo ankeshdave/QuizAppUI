@@ -1,3 +1,6 @@
+/// <reference path="~/Scripts/jquery-2.0.3.js" />
+/// <reference path="~/Scripts/jquery-ui-1.10.3.js" />
+
 $(document).ready(function () {
 
 	/* open Mail Modal */
@@ -345,7 +348,7 @@ function fix(){
 function add_loader(block){
 	var bW = $(block).width();
 	var bH = $(block).height();    
-	$(block).append('<div class="loader" style="width: '+bW+'px; height: '+bH+'px;"><img src="img/loader.gif"/></div>');
+	$(block).append('<div class="loader" style="width: ' + bW + 'px; height: ' + bH + 'px;"><img src="../../Content/img/loader.gif"/></div>');
 }
 function remove_loader(block){
 	$(block).find('.loader').remove();

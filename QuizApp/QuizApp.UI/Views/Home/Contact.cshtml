@@ -10,37 +10,38 @@
         <div class="block">
             @Html.Partial("_BlockHeaderPartial", new BlockHeaderViewModel { HeaderText = "Feedback", ShowInfo = false})
         </div>
-        <div class="data-fluid">
-                   @using (Html.BeginForm("Contact", "Home", new { ViewBag.ReturnUrl }, FormMethod.Post, htmlAttributes: new { @id = "validateFeedbackForm", @name = "validateFeedbackForm" }))
-                   {
-                        @Html.AntiForgeryToken()
-                        @Html.ValidationSummary()
-                       
-                       <div class="row-form">
-                           <div class="span12">
-                               @Html.TextBoxFor(m => m.Name, new { @id = "name", @name = "name", placeholder = "name", @class = "validate[required]" })
-                               @Html.ValidationMessageFor(m=> m.Name)
-                           </div>
-                       </div>
-                       <div class="row-form">
-                           <div class="span12">
-                               @Html.TextBoxFor(m => m.EmailId, new { @id = "email", @name = "email", placeholder = "email", @class = "validate[required],custom[email]" })
-                               @Html.ValidationMessageFor(m => m.EmailId)
-                           </div>
-                       </div>
-                       <div class="row-form">
-                           <div class="span12">
-                               @Html.DropDownListFor(m => m.Reason, (IEnumerable<SelectListItem>)ViewBag.DropDownList,"--Select Reason--", new { @id = "reason", @name = "reason", @class = "validate[required]" })
-                               @Html.ValidationMessageFor(m=> m.Reason)
-                           </div>
-                       </div>
-                       <div class="row-form">
-                           <div class="span12">
-                               @Html.TextAreaFor(m => m.Summary, new { @id = "summary", @name = "summary", placeholder = "summary", @class = "validate[required]" })
-                               @Html.ValidationMessageFor(m => m.Summary)
-                           </div>
-                       </div>
-                       <div class="toolbar bottom tar">
+        <div class="block">
+            <div class="data-fluid">
+                @using (Html.BeginForm("Contact", "Home", new { ViewBag.ReturnUrl }, FormMethod.Post, htmlAttributes: new { @id = "validateFeedbackForm", @name = "validateFeedbackForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+
+                    <div class="row-form">
+                        <div class="span12">
+                            @Html.TextBoxFor(m => m.Name, new { @id = "name", @name = "name", placeholder = "name", @class = "validate[required]" })
+                            @Html.ValidationMessageFor(m => m.Name)
+                        </div>
+                    </div>
+                    <div class="row-form">
+                        <div class="span12">
+                            @Html.TextBoxFor(m => m.EmailId, new { @id = "email", @name = "email", placeholder = "email", @class = "validate[required],custom[email]" })
+                            @Html.ValidationMessageFor(m => m.EmailId)
+                        </div>
+                    </div>
+                    <div class="row-form">
+                        <div class="span12">
+                            @Html.DropDownListFor(m => m.Reason, (IEnumerable<SelectListItem>)ViewBag.DropDownList, "--Select Reason--", new { @id = "reason", @name = "reason", @class = "validate[required]" })
+                            @Html.ValidationMessageFor(m => m.Reason)
+                        </div>
+                    </div>
+                    <div class="row-form">
+                        <div class="span12">
+                            @Html.TextAreaFor(m => m.Summary, new { @id = "summary", @name = "summary", placeholder = "summary", @class = "validate[required]" })
+                            @Html.ValidationMessageFor(m => m.Summary)
+                        </div>
+                    </div>
+                    <div class="toolbar bottom tar">
                         <div class="btn-group">
                             <button class="btn btn-info" id="hidePromptFeedbackForm" name="hidePromptFeedbackForm" type="button">Hide prompts</button>
                             <button class="btn" type="submit">
@@ -48,12 +49,14 @@
                             </button>
                         </div>
                     </div>
-                 }
-            <p id="confirmation" onclick="MessageConfirmation()">
-                <h3>Thanks for your feedback!</h3>
-            </p>
-                    
+                }
+                <p id="confirmation" onclick="MessageConfirmation()">
+                    <h3>Thanks for your feedback!</h3>
+                </p>
+
+            </div>
         </div>
+            
     </div>        
 </div>
 <div class="row-fluid">
@@ -76,7 +79,7 @@
 
 @section Scripts
 {
-    @Scripts.Render("~/Scripts/ViewScripts/Feedback")
+    @Scripts.Render("~/Scripts/ViewScripts/ContactUs")
 }
 
 

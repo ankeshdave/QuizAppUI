@@ -34,6 +34,8 @@ $(document).ready(function () {
         $('#validateChangePasswordForm').validationEngine('hide');
     });
 
+    PostChnagePasswordForm();
+
     /*Change Password Form End*/
 
     /*Set Local Password DForms Start*/
@@ -103,4 +105,56 @@ function StyleExternalProvider(anchorElement, anchorStyle, divCssStyle, iconCssC
     var innerDiv = anchorElement.find(".value");
     innerDiv.attr("style", divCssStyle);
     innerDiv.children('span').attr("class", iconCssClass);
+}
+
+function PostChnagePasswordForm() {
+    var changePasswordForm = $('#validateChangePasswordForm');
+
+    changePasswordForm.submit(function (e) {
+
+        e.preventDefault();
+        
+
+        if (changePasswordForm.validationEngine('validate')) {
+            var changePasswordFormBlock = changePasswordForm.closest('.block');
+            add_loader(changePasswordFormBlock);
+            var options = {
+                //url: '/Home/Contact',//' @Url.Action("CommentForm")',
+                url: changePasswordForm.action,
+                type: "POST",
+                data: changePasswordForm.serialize(),
+                
+                //beforeSubmit:  showRequest,  // pre-submit callback 
+                success: function (data, textStatus, jqXhr) {
+                    onChangePasswordFormSuccess(data, textStatus, jqXhr, changePasswordFormBlock);
+                }, // post-submit callback 
+                error: function (jqXHR, textStatus, errorThrown ) {
+                    onChangePasswordFormFailure(jqXHR, textStatus, errorThrown, changePasswordFormBlock);
+                },
+
+                complete: function(jqXhr,textStatus) {
+                    onChangePasswordFormComplete(jqXhr, textStatus);
+                }
+                
+            };
+
+            // submit the form 
+            $.ajax(options);
+
+        }
+        // return false to prevent normal browser submit and page navigation 
+        return false;
+    });
+
+    function onChangePasswordFormSuccess(data, textStatus, jqXhr,contactFormBlock) {
+        
+    }
+
+    function onChangePasswordFormFailure(jqXhr, textStatus, errorThrown, changePasswordFormBlock) {
+        
+    }
+
+    function onChangePasswordFormComplete(jqXhr, textStatus){
+        
+    }
 }

@@ -108,6 +108,12 @@
         {
             @RenderSection("ModalDivAndExtras",required: false)
         }
+        
+        <script id="loaderTemplate" type="text/application-HtmlTemplate">
+            <div class=".loader">
+                <img src="@Url.Content(@"~/Content/img/loader.gif")" alt="Loading..." width="{{width}}" height="{{height}}" />
+            </div>
+        </script>
 
 @*        <footer>
             <div class="content-wrapper">
