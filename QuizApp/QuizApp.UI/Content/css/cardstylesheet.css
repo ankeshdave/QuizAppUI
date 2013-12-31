@@ -8,7 +8,7 @@
 .body .content .card
 {
     padding: 10px;
-    height: 320px;
+    height: 260px;
     width: 350px;
     margin-bottom: 20px;
     box-shadow: 0px 1px 2px black;
@@ -19,7 +19,7 @@
 .body .content .card .left, .body .content .card .right
 {
     /* changed from 90 to 280 to push the bottom elements*/
-    height: 270px;
+    height: 210px;
     width: 50%;
     float: left;
     color: #fff;
@@ -44,7 +44,8 @@
 
 .body .content .card.icon .left
 {
-    width: 30%;
+    width: 25%;
+    /*width: 30%;*/
     line-height: 90px;
 }
 .body .content .card.icon .right
@@ -86,8 +87,10 @@
 
 .body .content .card.icon .left .icon
 {
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: auto;
+    /*width: 100px;
+    height: 100px;*/
     /*border: 3px solid #FFF;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -97,7 +100,7 @@
 {
     vert-align: middle;
     /*Changed font size from 56 to 72*/
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .body .content .card .top
