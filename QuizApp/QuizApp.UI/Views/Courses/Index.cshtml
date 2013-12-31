@@ -1,0 +1,62 @@
+﻿@model QuizApp.UI.Models.CourseInfoModel
+
+@{
+    ViewBag.Title = "Courses";
+    ViewBag.SubTitle = "FIND ALL YOUR COURSES HERE";
+    Layout = "~/Views/Shared/_LayoutPageWithSideBar.cshtml";
+}
+
+<div class="row-fluid">
+    <div class="cards">
+        @for (int index = 0; index < Model.CourseInfos.Count; index++)
+        {
+            var courseInfo = Model.CourseInfos[index];
+            var color = "green";
+            var tagColor = "blue";
+            switch (index % 6)
+            {
+                case 1:
+                    color = "blue";
+                    tagColor = "green";
+                    break;
+                case 2:
+                    color = "yellow";
+                    tagColor = "green";
+                    break;
+                case 3:
+                    color = "orange";
+                    tagColor = "green";
+                    break;
+                case 4:
+                    color = "purple";
+                    tagColor = "green";
+                    break;
+                case 5:
+                    color = "red";
+                    tagColor = "green";
+                    break;
+            }
+
+            <div class="card @color icon ">
+
+                <div class="top">@courseInfo.Name</div>
+                <div class="left"><div class="icon"><span class="ico-monitor" /></div></div>
+                <div class="right">
+                    @courseInfo.Description
+                <h5>Topics Covered:</h5>
+                @foreach (var tag in courseInfo.CourseTags)
+                {
+                    <span class="label label-info @tagColor">@tag</span>
+                }
+            </div>
+            <div class="bottom"><a href="@Url.Action("DisplayCourse", "Courses", new { courseId = courseInfo.CourseId })">Read More..</a></div>
+
+        </div>
+        }
+    </div>
+
+
+    @section Scripts
+{
+        @*@Scripts.Render("~/Scripts/ViewScripts/Feedback")*@
+    }

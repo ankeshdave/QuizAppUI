@@ -32,14 +32,7 @@ namespace QuizApp.UI.Controllers
 
             return View();
         }
-
-        public ActionResult Courses()
-        {
-            ViewBag.Message = "Your contact page.";
-            ViewBag.DropDownList = new SelectList(_reasonsList);
-            return View();
-        }
-
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

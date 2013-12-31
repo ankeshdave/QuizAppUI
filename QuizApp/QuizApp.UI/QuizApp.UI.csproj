@@ -221,6 +221,7 @@
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -590,7 +591,8 @@
     <Content Include="Views\Shared\_DashboardPartial.cshtml" />
     <Content Include="Views\Shared\_AdminVisitorsStatsPartial.cshtml" />
     <Content Include="Views\Shared\_RecentActivitiesPartialView.cshtml" />
-    <Content Include="Views\Home\Courses.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\Courses\DisplayCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
