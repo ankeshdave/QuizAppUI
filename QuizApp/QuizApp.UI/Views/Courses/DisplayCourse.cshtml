@@ -1,6 +1,26 @@
-﻿@{
-    ViewBag.Title = "DisplayCourse";
-    Layout = "~/Views/Shared/_LayoutPageWithSideBar.cshtml";
+﻿@using QuizApp.UI.ViewModel
+@model QuizApp.UI.Models.CourseInfo
+@{
+    ViewBag.Title = @Model.Name;
+    ViewBag.SubTitle = "YOUR COURSE PAGE IS HERE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DisplayCourse</h2>
+
+
+@Html.Partial("_PageHeaderPartial")
+
+@section Sidebar
+{
+    <div class="row-fluid">
+    <div id="jq-treeview-demo">
+       
+    </div>
+</div>
+}
+
+@section Scripts_MasterLayout
+{
+   
+
+}

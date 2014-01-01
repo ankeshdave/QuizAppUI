@@ -218,6 +218,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Author\AuthorAreaRegistration.cs" />
+    <Compile Include="Areas\Author\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\Controllers\HomeController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -509,6 +511,8 @@
     <Content Include="Content\img\loaders\Descr.WD3" />
     <Content Include="Content\img\select\Descr.WD3" />
     <Content Include="Content\img\uniform\Descr.WD3" />
+    <Content Include="Areas\Author\Views\Web.config" />
+    <Content Include="Areas\Author\Views\Home\Index.cshtml" />
     <None Include="Content\css\IconSocial\fonts\icomoon.eot" />
     <None Include="Content\css\IconSocial\fonts\icomoon.svg" />
     <None Include="Content\css\IconSocial\fonts\icomoon.ttf" />
@@ -597,6 +601,8 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Author\Models\" />
+    <Folder Include="Areas\Author\Views\Shared\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
   </ItemGroup>
