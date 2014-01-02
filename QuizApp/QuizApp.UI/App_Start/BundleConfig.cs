@@ -22,6 +22,7 @@ namespace QuizApp.UI
             bundles.Add(new ScriptBundle("~/Scripts/ViewScripts/Manage").Include("~/Scripts/ViewScripts/Manage.js"));
             bundles.Add(new ScriptBundle("~/Scripts/ViewScripts/Register").Include("~/Scripts/ViewScripts/Register.js"));
             bundles.Add(new ScriptBundle("~/Scripts/ViewScripts/ContactUs").Include("~/Scripts/ViewScripts/ContactUs.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/ViewScripts/CourseStructure").Include("~/Scripts/ViewScripts/CourseStructure.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

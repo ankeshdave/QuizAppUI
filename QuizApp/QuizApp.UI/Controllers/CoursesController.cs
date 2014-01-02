@@ -34,7 +34,34 @@ namespace QuizApp.UI.Controllers
         
         public ActionResult DisplayCourse(int courseId)
         {
+
             return View(courseInfoModel.CourseInfos.FirstOrDefault(t=> t.CourseId == courseId));
+        }
+
+        public ActionResult GetTreeData(int courseId)
+        {
+            return
+                Json(data: new[]
+                {
+                    new
+                    {
+                        title = "Node 1",
+                        key = "1",
+                        folder = false,
+                        children = new[]
+                        {
+                            new { title = "Node 1", key = "3", folder = false },
+                            new { title = "Folder 2", key = "4", folder = false }
+                        }
+                    },
+                    new
+                    {
+                        title = "Folder 2",
+                        key = "2",
+                        folder = true,
+                        children = new[] { new { title = "Folder 2", key = "5", folder = false } }
+                    }
+                });
         }
 
     }

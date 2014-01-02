@@ -16,13 +16,14 @@
 @import "shbrush/shThemeDefault.css";
 @import "../../js/plugins/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css";
 @import "fullcalendar/fullcalendar.css";
+@import "../../js/plugins/fancytree/skin-win8/ui.fancytree.css";
 @import "icons.css";
 @import "styling.css";
 @import "stylesheet.css";
 @import "opera.css";
 @import "mystyles.css";
 @import "cardstylesheet.css";
-@import "../themes/base/jquery-treeview.css";
+
 
 html { height: 100%; }
 body { min-height: 100%; font-family: "Segoe UI", arial, sans-serif; font-size: 12px; position: relative; background: url('../img/backgrounds/default.jpg') left top repeat;}
