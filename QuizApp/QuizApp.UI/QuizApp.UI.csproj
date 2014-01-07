@@ -494,6 +494,7 @@
     <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\_NavBarDefaultPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

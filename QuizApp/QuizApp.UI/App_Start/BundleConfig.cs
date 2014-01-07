@@ -8,6 +8,9 @@ namespace QuizApp.UI
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //Remove the file ignore list as it might remove '.min.*' files from bundling
+            bundles.IgnoreList.Clear();
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-{version}.js"));
 
@@ -22,9 +25,17 @@ namespace QuizApp.UI
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
+
             bundles.Add(new ScriptBundle("~/assets/js/iecompatibility").Include(
                 "~/assets/js/html5shiv.js",
                 "~/assets/js/respond.min.js"));
+
+
+            bundles.Add(new ScriptBundle("~/mainscripts").Include(
+                "~/assets/js/bootstrap.min.js",
+                "~/assets/js/typeahead-bs2.min.js",
+                "~/assets/js/ace-elements.min.js",
+                "~/assets/js/ace.min.js"));
 
             bundles.Add(new StyleBundle("~/assets/css").Include(
                 "~/assets/css/bootstrap.min.css",
@@ -46,6 +57,7 @@ namespace QuizApp.UI
                 "~/Content/themes/base/jquery.ui.datepicker.css",
                 "~/Content/themes/base/jquery.ui.progressbar.css",
                 "~/Content/themes/base/jquery.ui.theme.css"));
+
         }
     }
 }

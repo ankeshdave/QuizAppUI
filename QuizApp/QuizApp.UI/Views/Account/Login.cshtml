@@ -45,6 +45,9 @@
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
 
-@section Scripts {
+@section InlineScripts_Master {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $('body').addClass("login-layout");
+    </script>
 }
