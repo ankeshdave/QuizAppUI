@@ -22,8 +22,11 @@ namespace QuizApp.UI
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/assets/js/iecompatibility").Include(
+                "~/assets/js/html5shiv.js",
+                "~/assets/js/respond.min.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/assets/css").Include(
                 "~/assets/css/bootstrap.min.css",
                 "~/assets/css/font-awesome.min.css",
                 "~/assets/css/ace.min.css",

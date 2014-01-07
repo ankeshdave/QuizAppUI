@@ -7,26 +7,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         @*Favourites icon start*@
+
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
         @*Favourites icon end*@
 
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        @*basic styles*@
+
+        @Styles.Render("~/assets/css")
 
         @*basic styles*@
-        @Styles.Render("~/Content/css")
-         @*basic styles*@
         
+        @*Fonts*@
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+        
+        @*Fonts*@
+
+
         <!--[if IE 7]>
             <link rel="stylesheet" href="../../assets/css/font-awesome-ie7.min.css" />
         <![endif]-->
 
-        @*Page Specific Plugins*@
-        @RenderSection("PluginStyles_Master", false);
-        @*Page Specific Plugins*@
+        @*Page Specific Plugins Styles*@
 
-        @Scripts.Render("~/bundles/modernizr")
+        @RenderSection("PluginStyles_Master", false)
+
+        @*Page Specific Plugins Styles*@
         
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="../../assets/css/ace-ie.min.css" />
+        <![endif]-->
+        
+        @*Inline Styles for Page*@
+        
+        @RenderSection("InlineStyles_Master",false)
+
+        @*Inline Styles for Page*@
+        
+        @*Site settings handler*@
+
+        <script type="text/javascript" src="../../assets/js/ace-extra.min.js"></script>
+        
+        @*Site settings handler*@
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+        <!--[if lt IE 9]>
+            @Scripts.Render("~/assets/js/iecompatibility")
+        <![endif]-->
+        
+        @Scripts.Render("~/bundles/modernizr")
 
     </head>
     <body>
