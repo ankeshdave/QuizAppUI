@@ -26,7 +26,6 @@ namespace QuizApp.UI
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/assets/css/bootstrap.min.css",
                 "~/assets/css/font-awesome.min.css",
-                "http://fonts.googleapis.com/css?family=Open+Sans:400,300",
                 "~/assets/css/ace.min.css",
                 "~/assets/css/ace-rtl.min.css",
                 "~/assets/css/ace-skins.min.css"));
