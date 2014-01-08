@@ -62,61 +62,43 @@
 	</head>
 	<body>
 		@RenderSection("TopNavigation_Master",false)
-	    @*<header>
-			<div class="content-wrapper">
-				<div class="float-left">
-					<p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-				</div>
-				<div class="float-right">
-					<section id="login">
-						@Html.Partial("_LoginPartial")
-					</section>
-					<nav>
-						<ul id="menu">
-							<li>@Html.ActionLink("Home", "Index", "Home")</li>
-							<li>@Html.ActionLink("About", "About", "Home")</li>
-							<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-						</ul>
-					</nav>
-				</div>
+
+		<div class="main-container" id="main-container">
+			<div id="body">
+				@RenderSection("featured", required: false)
+				<section class="content-wrapper main-content clear-fix">
+					@RenderBody()
+				</section>
 			</div>
-		</header>*@
-	    <div class="main-container" id="main-container">
-            <div id="body">
-                @RenderSection("featured", required: false)
-                <section class="content-wrapper main-content clear-fix">
-                    @RenderBody()
-                </section>
-            </div>
-            <footer>
-                <div class="content-wrapper">
-                    <div class="float-left">
-                        <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                    </div>
-                </div>
-            </footer>
-	    </div>
+			<footer>
+				<div class="content-wrapper">
+					<div class="float-left">
+						<p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+					</div>
+				</div>
+			</footer>
+		</div>
 
 		
 		
 
 		
-	    @*Basic Scripts*@
+		@*Basic Scripts*@
 		
-	    @*Load Jquery from CDN*@
+		@*Load Jquery from CDN*@
 
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 
-	    @*Load Jquery from CDN*@
+		@*Load Jquery from CDN*@
 		
-	    @*If CDN load failed load it from server*@
-        
+		@*If CDN load failed load it from server*@
+		
 
-        @*If CDN load failed load it from server*@
-        @*Load Jquery mobile if required*@
-        <script type="text/javascript">
-         	        if ("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
-         	    </script>
+		@*If CDN load failed load it from server*@
+		@*Load Jquery mobile if required*@
+		<script type="text/javascript">
+					if ("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+				</script>
 
 		@*Load Jquery mobile if required*@
 
