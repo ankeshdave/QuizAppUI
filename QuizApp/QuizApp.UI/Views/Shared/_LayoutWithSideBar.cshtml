@@ -1,24 +1,34 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
+
+@if (IsSectionDefined("Sidebar"))
+{
+    @RenderSection("Sidebar", required: false)
+}
+else
+{
+    @Html.Partial("_SidebarDefaultPartial")
+}
 <div class="main-content">
-    @RenderSection("BreadcrubmsAndSearch",required:false)
+    @if (IsSectionDefined("Breadcrumbs"))
+    {
+        @RenderSection("BreadcrubmsAndSearch", required: false)
+    }
+    else
+    {
+        @Html.Partial("_BreadcrumbsDefaultPartial")
+    }
     <div class="page-content" id="page-content">
         @RenderBody();
     </div>
 </div>
-
 @section TopNavigation_Master
 {
-    @RenderSection("TopNavigation",required:false)
+    @RenderSection("TopNavigation", required: false)
 }
 @section InlineStyles_Master
 {
-    <style type="text/css">
-        .main-content {
-            margin-left: 0px;
-        }
-    </style>
     @RenderSection("InlineStyles", required: false)
 }
 @section PluginStyles_Master
@@ -26,15 +36,10 @@
     @RenderSection("PluginStyles", required: false)
 }
 @section InlineScripts_Master
-{    
+{
     @RenderSection("InlineScripts", required: false)
 }
 @section PluginScripts_Master
 {
     @RenderSection("PluginScripts", required: false)
 }
-
-
-
-
-
