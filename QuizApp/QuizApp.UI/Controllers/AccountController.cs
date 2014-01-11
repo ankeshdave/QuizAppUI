@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
+using QuizApp.UI.ViewModel;
 using WebMatrix.WebData;
 using QuizApp.UI.Filters;
 using QuizApp.UI.Models;
@@ -24,7 +25,7 @@ namespace QuizApp.UI.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return View(new RegisterSignupViewModel());
         }
 
         //
@@ -42,7 +43,7 @@ namespace QuizApp.UI.Controllers
 
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "The user name or password provided is incorrect.");
-            return View(model);
+            return View(new RegisterSignupViewModel() {LoginModel = model});
         }
 
         //
