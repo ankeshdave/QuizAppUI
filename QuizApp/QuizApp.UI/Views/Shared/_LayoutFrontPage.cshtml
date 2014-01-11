@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="margin-left: 10%;margin-right:10% ">
+    <div class="page-header blue green">@ViewBag.PageHeader</div>
+    @if (IsSectionDefined("PageHeaderIntro"))
+    {
+        <div class="container background-blue" style="height:200px">
+            @RenderSection("PageHeaderIntro", required: false)
+        </div>
+    }
+
+    @RenderBody()
+</div>
+
+@section TopNavigation
+{
+    @Html.Partial("_MenuNavBarPartial")
+}
+
+@section InlineStyles
+{
+    <link href="~/Content/homeindex.css" rel="stylesheet" />
+    @RenderSection("InlineStyles_FrontPage", required: false)
+}
+
+
+@section InlineScripts
+{
+    @RenderSection("InlineScripts_FrontPage", required: false)
+}
