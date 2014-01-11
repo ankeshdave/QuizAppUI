@@ -1,4 +1,63 @@
-﻿.navmenuName {
+﻿.pageheader-container {
+   background-attachment: scroll;
+background-clip: border-box;
+background-color: skyblue;
+background-image: none;
+background-origin: padding-box;
+background-position: 0% 0%;
+background-repeat: repeat;
+background-size: auto auto;
+border-bottom-color: rgb(57, 57, 57);
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: rgb(57, 57, 57);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(57, 57, 57);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(57, 57, 57);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-top-style: none;
+border-top-width: 0px;
+box-shadow: none;
+color: whitesmoke;
+font-family: 'Open Sans';
+font-size: 13px;
+line-height: 200px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+min-height: 45px;
+padding-left: 0px;
+padding-right: 0px;
+position: relative;
+z-index: 1000;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-box-sizing: border-box;
+
+}
+
+.pageheader-container .image {
+    width: 35%;
+    margin-left: 5%;
+    margin-right: 5%
+}
+
+
+.navmenuName {
     
 }
 

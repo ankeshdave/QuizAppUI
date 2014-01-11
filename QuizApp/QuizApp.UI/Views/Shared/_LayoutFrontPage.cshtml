@@ -2,14 +2,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="content-wrapper" style="margin-left: 10%;margin-right:10% ">
+<div class="content-wrapper" style="margin-left: 8%;margin-right:8% ">
     <div class="page-header blue green">@ViewBag.PageHeader</div>
     @if (IsSectionDefined("PageHeaderIntro"))
-    {
-        <div class="container background-blue" style="height:200px">
-            @RenderSection("PageHeaderIntro", required: false)
-        </div>
-    }
+{
+    <div class="pageheader-container">
+        @RenderSection("PageHeaderIntro", required: false)
+    </div>
+}
 
     @RenderBody()
 </div>
