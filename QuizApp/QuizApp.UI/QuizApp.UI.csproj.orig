@@ -266,7 +266,7 @@
     <Compile Include="Models\UsersContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ForgotPasswordViewModel.cs" />
-    <Compile Include="ViewModel\LoginSignupViewModel.cs" />
+    <Compile Include="ViewModel\RegisterSignupViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
@@ -391,8 +391,11 @@
     <Content Include="assets\js\typeahead-bs2.min.js" />
     <Content Include="assets\js\x-editable\ace-editable.min.js" />
     <Content Include="assets\js\x-editable\bootstrap-editable.min.js" />
+<<<<<<< HEAD
     <Content Include="Content\homeindex.css" />
+=======
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
+>>>>>>> 277f5e1af47f1c6e849854c227d9d769731ad8f5
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -511,7 +514,7 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\LoginSignup.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -529,8 +532,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_SidebarDefaultPartial.cshtml" />
     <Content Include="Views\Shared\_BreadcrumbsDefaultPartial.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Shared\_MenuNavBarPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutFrontPage.cshtml" />
+=======
     <Content Include="Views\Account\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
@@ -539,8 +544,7 @@
     <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
-    <Content Include="Views\Account\_RegisterPartial.cshtml" />
-    <Content Include="Views\Account\_ForgotPasswordPartial.cshtml" />
+>>>>>>> 277f5e1af47f1c6e849854c227d9d769731ad8f5
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
