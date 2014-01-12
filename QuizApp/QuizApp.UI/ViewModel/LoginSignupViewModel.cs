@@ -2,7 +2,7 @@
 
 namespace QuizApp.UI.ViewModel
 {
-    public class RegisterSignupViewModel
+    public class LoginSignupViewModel
     {
         public RegisterModel RegisterModel { get;  set; }
 
@@ -10,11 +10,23 @@ namespace QuizApp.UI.ViewModel
 
         public ForgotPasswordViewModel ForgotPasswordViewModel { get;  set; }
 
-        public RegisterSignupViewModel()
+        public ViewType DisplayViewType { get;  set; }
+
+        public LoginSignupViewModel(ViewType viewType)
         {
             RegisterModel = new RegisterModel();
             LoginModel = new LoginModel();
             ForgotPasswordViewModel = new ForgotPasswordViewModel();
+            DisplayViewType = viewType;
+        }
+
+        public enum ViewType
+        {
+            Login=0,
+            Register,
+            ForgotPassword
         }
     }
+
+
 }

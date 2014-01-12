@@ -1,0 +1,91 @@
+﻿@using QuizApp.UI.ViewModel
+@model QuizApp.UI.ViewModel.LoginSignupViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+@*<hgroup class="title">
+        <h1>@ViewBag.Title.</h1>
+    </hgroup>
+
+    <section id="loginForm">
+    <h2>Use a local account to log in.</h2>
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Log in Form</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName)
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                </li>
+                <li>
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                </li>
+            </ol>
+            <input type="submit" value="Log in" />
+        </fieldset>
+        <p>
+            @Html.ActionLink("Register", "Register") if you don't have an account.
+        </p>
+    }
+    </section>
+
+    <section class="social" id="socialLoginForm">
+        <h2>Use another service to log in.</h2>
+        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+    </section>*@
+@section InlineScripts {
+    <script type="text/javascript">
+        $('body').addClass("login-layout");
+        $('#page-content').removeClass("page-content");
+        function show_box(id) {
+            jQuery('.widget-box.visible').removeClass('visible');
+            jQuery('#' + id).addClass('visible');
+        }
+    </script>
+}
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+        <div class="login-container">
+            <div class="center">
+                <h1>
+                    <i class="icon-bookmark green"></i>
+                    <span class="red">Course Door</span>
+                    <span class="white">Application</span>
+                </h1>
+                <h4 class="blue">
+                    &copy; Anwin Tech
+                </h4>
+            </div>
+            <div class="space-6">
+            </div>
+            <div class="position-relative" id="viewHost">
+                @if (Model.DisplayViewType == LoginSignupViewModel.ViewType.Register)
+                {
+                    @Html.Partial("_RegisterPartial", Model.RegisterModel)
+                }
+                @if (Model.DisplayViewType == LoginSignupViewModel.ViewType.Login)
+                {
+                    @Html.Partial("_LoginPartial", Model.LoginModel)
+                }
+                @if (Model.DisplayViewType == LoginSignupViewModel.ViewType.ForgotPassword)
+                {
+                    @Html.Partial("_ForgotPasswordPartial", Model.ForgotPasswordViewModel)
+                }
+            </div>
+            <!-- /position-relative -->
+        </div>
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->

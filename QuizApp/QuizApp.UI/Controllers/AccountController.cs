@@ -19,17 +19,17 @@ namespace QuizApp.UI.Controllers
     public class AccountController : Controller
     {
         //
-        // GET: /Account/Login
+        // GET: /Account/LoginSignup
 
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View(new RegisterSignupViewModel());
+            return View("LoginSignup", new LoginSignupViewModel(LoginSignupViewModel.ViewType.Login));
         }
 
         //
-        // POST: /Account/Login
+        // POST: /Account/LoginSignup
 
         [HttpPost]
         [AllowAnonymous]
@@ -40,10 +40,10 @@ namespace QuizApp.UI.Controllers
             {
                 return RedirectToLocal(returnUrl);
             }
-
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "The user name or password provided is incorrect.");
-            return View(new RegisterSignupViewModel() {LoginModel = model});
+            return View("LoginSignup",
+                new LoginSignupViewModel(LoginSignupViewModel.ViewType.Login) {LoginModel = model});
         }
 
         //
@@ -64,7 +64,7 @@ namespace QuizApp.UI.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            return View("LoginSignup", new LoginSignupViewModel(LoginSignupViewModel.ViewType.Register));
         }
 
         //
@@ -91,7 +91,8 @@ namespace QuizApp.UI.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+             return View("LoginSignup",
+                new LoginSignupViewModel(LoginSignupViewModel.ViewType.Register) {RegisterModel = model});;
         }
 
         //
